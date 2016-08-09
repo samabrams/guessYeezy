@@ -10,6 +10,7 @@ app.controller('gameController', function () {
     this.average = 0;
     this.sum = 0;
     this.numSongsTried = 0;
+    this.previousSongs = [];
     this.cdSongsGuessed = 0;
     this.cdLength = 21;
     this.lrSongsGuessed = 0;
@@ -17,6 +18,7 @@ app.controller('gameController', function () {
     this.cd = [
         {
             title: /^intro$/,
+            trackNum: 1,
             producers: ['Kanye'],
             features: [],
             samples: [],
@@ -27,6 +29,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^we don[\']?t care$/,
+            trackNum: 2,
             producers: ['Kanye'],
             features: [],
             samples: ['\'I Just Wanna Stop\' by The Jimmy Castor Bunch'],
@@ -36,6 +39,7 @@ app.controller('gameController', function () {
             songLength: '3:59'
         }, {
             title: /^graduation day$/,
+            trackNum: 3,
             producers: ['Kanye'],
             features: [],
             samples: ['\'Pomp and Circumstance\' by Edward Elgar'],
@@ -45,6 +49,7 @@ app.controller('gameController', function () {
             songLength: '1:22'
         }, {
             title: /^all falls down$/,
+            trackNum: 4,
             producers: ['Kanye'],
             features: ['Syleena Johnson'],
             samples: ['\'Mystery of Iniquity\' by Lauryn Hill', '\'Real Niggaz\' by The Notorius B.I.G.', '\'Wow\' by Kanye West ft. GLC'],
@@ -55,6 +60,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^i[\']?ll fly away$/,
+            trackNum: 5,
             producers: ['Kanye'],
             features: [],
             samples: [],
@@ -65,6 +71,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^spaceship$/,
+            trackNum: 6,
             producers: ['Kanye'],
             features: ['GLC', 'Consequence'],
             samples: ['\'Distant Lover\' by Marvin Gaye'],
@@ -75,6 +82,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^jesus walks$/,
+            trackNum: 7,
             producers: ['Kanye'],
             features: [],
             samples: ['\'(Don\'t Worry) If There\'s a Hell Below, We\'re All Going to Go\' by Curtis Mayfield', '\'Walk With Me\' by The ARC Choir', '\'Ode to Billie Joe\' by Lou Donaldson', '\'Keep It Rollin\'\' by A Tribe Called Quest ft. Large Professor'],
@@ -85,6 +93,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^never let me down$/,
+            trackNum: 8,
             producers: ['Kanye'],
             features: ['J. Ivy', 'Jay Z'],
             samples: ['\'Maybe It\'s the Power of Love\' by Blackjack', '\'Hovi Baby (Remix)\' by Jay Z'],
@@ -95,6 +104,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^get [\']?em high$/,
+            trackNum: 9,
             producers: ['Kanye'],
             features: ['Talib Kweli', 'Common'],
             samples: ['\'Warning\' by the Notorious B.I.G.'],
@@ -105,6 +115,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^workout plan$/,
+            trackNum: 10,
             producers: ['Kanye'],
             features: [],
             samples: [],
@@ -115,6 +126,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^(the )?new workout plan$/,
+            trackNum: 11,
             producers: ['Kanye'],
             features: [],
             samples: ['\'I Need To Know\' by Kanye West'],
@@ -125,6 +137,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^slow jamz$/,
+            trackNum: 12,
             producer: ['Kanye'],
             features: ['Jamie Foxx', 'Twista'],
             samples: ['\'A House Is Not A Home\' by Luther Vandross'],
@@ -135,6 +148,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^breathe in[,]? breathe out$/,
+            trackNum: 13,
             producer: ['Brian \"All Day\" Miller', 'Kanye'],
             features: ['Ludacris'],
             samples: [],
@@ -145,6 +159,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit skit 1$/,
+            trackNum: 14,
             producer: ['Kanye'],
             features: [],
             samples: [],
@@ -155,6 +170,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit$/,
+            trackNum: 15,
             producer: ['Kanye'],
             features: [],
             samples: ['\'Like This and Like That\' by Monica ft. Mr. Malik', '\'Spirit in the Dark\' by Aretha Franklin'],
@@ -165,6 +181,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit skit 2$/,
+            trackNum: 16,
             producer: ['Kanye'],
             features: [],
             samples: [],
@@ -175,6 +192,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^lil jimmy skit$/,
+            trackNum: 17,
             producer: ['Kanye'],
             features: [],
             samples: ['\'Ride\' by The Kleptones'],
@@ -185,6 +203,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^two words$/,
+            trackNum: 18,
             producer: ['Kanye'],
             features: ['The Harlem Boys Choir', 'Freeway', 'Mos Def'],
             samples: ['\'Peace and Love\' by Mandrill', '\'The Rainmaker\' by The 5th Dimension', '\'Got Nowhere\' by State Property', '\'Do It Again (Put Ya Hands Up)\' by Jay Z ft. Beanie Sigel and Amil'],
@@ -195,6 +214,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^through the wire$/,
+            trackNum: 19,
             producer: ['Kanye'],
             features: [],
             samples: ['\'Player\'s Ball\' by OutKast', '\'Through the Fire\' by Chaka Khan'],
@@ -205,6 +225,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^family business$/,
+            trackNum: 20,
             producer: ['Kanye'],
             features: [],
             samples: ['\'Fonky Thang\' by The Dells', '\'Ambitionz Az a Ridah\' by 2Pac', 'Rain Rain Go Away'],
@@ -215,6 +236,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^last call$/,
+            trackNum: 21,
             producer: ['Evidence', 'Kanye'],
             features: [],
             samples: ['\'Mr. Rockefeller\' by Bette Midler', '\'She\'s Gone to Another\' by The Whatnauts', '\'Doggone\' by Love', '\'Better Than Yours\' by Kanye West ft. Common', '\'Wow\' by Kanye West ft. GLC'],
@@ -225,6 +247,7 @@ app.controller('gameController', function () {
         }
     ];
     this.pickSong = function () {
+        if (this.currentSong) this.previousSongs.push(this.currentSong);
         this.songIndex = Math.floor((Math.random() * this.cd.length));
         this.currentSong = this.cd.splice(this.songIndex, 1)[0];
         console.log(this.currentSong);
@@ -266,27 +289,38 @@ app.controller('gameController', function () {
         this.score -= 8;
     };
     this.submitGuess = function () {
-        var userGuess = $('#guess').val().toLowerCase();
+        var userGuess = $('#guess').val();
+        var userGuessForComparison = userGuess.toLowerCase();
+
+        if (userGuessForComparison.length == 0) return;
         this.clearInput();
-        if (this.currentSong.title.test(userGuess)) {
+        if (this.currentSong.title.test(userGuessForComparison)) {
             this.updateFeedback('You got it! Your score for this track is ' + this.score);
             this.setBest();
             this.sum += this.score;
             this.calculateAverage();
             this.timeShown = true;
-            this.currentSong = {};
             this.awaitingGuess = false;
             this.cdSongsGuessed++;
+            if (this.cd.length == 0){
+                this.updateFeedback('. That\'s all for now! Thanks for playing. Refresh to play again.', 'concat');
+            }
         }
         else {
             for (var i = 0; i < this.cd.length; i++){
-                if (this.cd[i].title.test(userGuess)){
+                if (this.cd[i].title.test(userGuessForComparison)){
                     console.log("i: " + i, "songIndex: " + this.songIndex);
-                    if (i > this.songIndex){
+                    if (this.cd[i].trackNum > this.currentSong.trackNum){
                         this.updateFeedback('The track is earlier on the album than '+userGuess);
                     }
                     else this.updateFeedback('The track is later on the album than '+userGuess);
                     this.score -= 5;
+                    return;
+                }
+            }
+            for (var i = 0; i < this.previousSongs.length; i++){
+                if (this.previousSongs[i].title.test(userGuessForComparison)){
+                    this.updateFeedback('We already did that one');
                     return;
                 }
             }
@@ -295,6 +329,7 @@ app.controller('gameController', function () {
         }
     };
     this.updateFeedback = function (str, mode) {
+        console.log('updating feedback');
         switch(mode){
             case 'replace':
                 $('#feedback').text(str);

@@ -26,13 +26,13 @@
         <button ng-click="gc.pickSong()" ng-hide="gc.cd.length == 0">New Song</button>
     </div>
     <div class="helpButtons col-xs-12">
-        <button ng-show="gc.currentSong.samples.length > 0" ng-click="gc.showSample()">give me a sample</button>
-        <button ng-show="gc.currentSong.features.length > 0" ng-click="gc.showFeature()">give me a feature</button>
-        <button ng-show="gc.currentSong.producers.length > 0" ng-click = "gc.showProducer()">give me a producer</button>
-        <button ng-show="gc.currentSong.difficultLine.length > 0" ng-click="gc.showDifficultLine()">give me a difficult line</button>
-        <button ng-show="gc.currentSong.mediumLine.length > 0" ng-click="gc.showMediumLine()">give me a kinda easy line</button>
-        <button ng-show="gc.currentSong.easyLine.length > 0" ng-click="gc.showEasyLine()">give me a really easy line</button>
-        <button ng-click="gc.showSongLength()" ng-hide="gc.timeShown">give me the length of the song</button>
+        <button ng-show="gc.awaitingGuess && gc.currentSong.samples.length > 0" ng-click="gc.showSample()">give me a sample</button>
+        <button ng-show="gc.awaitingGuess && gc.currentSong.features.length > 0" ng-click="gc.showFeature()">give me a feature</button>
+        <button ng-show="gc.awaitingGuess && gc.currentSong.producers.length > 0" ng-click = "gc.showProducer()">give me a producer</button>
+        <button ng-show="gc.awaitingGuess && gc.currentSong.difficultLine.length > 0" ng-click="gc.showDifficultLine()">give me a difficult line</button>
+        <button ng-show="gc.awaitingGuess && gc.currentSong.mediumLine.length > 0" ng-click="gc.showMediumLine()">give me a kinda easy line</button>
+        <button ng-show="gc.awaitingGuess && gc.currentSong.easyLine.length > 0" ng-click="gc.showEasyLine()">give me a really easy line</button>
+        <button ng-click="gc.awaitingGuess && gc.showSongLength()" ng-hide="gc.timeShown">give me the length of the song</button>
     </div>
     <div class="col-xs-12">
         <p id="feedback"></p>
