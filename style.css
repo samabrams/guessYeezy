@@ -1,0 +1,74 @@
+*{
+    font-family: Helvetica;
+    color: saddlebrown;
+    text-align: center;
+}
+h1 {
+    text-shadow: 0 2px 2px gold;
+    font-size: 180%;
+}
+h4 {
+    display: inline-block;
+    text-shadow: 0 1px 1px gold;
+    font-size: 150%;
+    margin: 0 15px;
+}
+.mainContent {
+    margin-left: 16.67vw;
+}
+#guess {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid saddlebrown;
+    border-radius: 2px;
+}
+.guessContainer {
+    position: relative;
+    display: block;
+    left: 16.67%;
+    margin-bottom: 20px;
+}
+.helpButtons {
+    margin-bottom: 20px;
+}
+button {
+    text-transform: uppercase;
+    background-color: gold;
+    border: 1px solid saddlebrown;
+    box-shadow: 0 2px 4px rgba(0, 0,0,.2);
+    border-radius: 3px;
+}
+button:focus, input:focus {
+    outline: 0;
+}
+button:active {
+    box-shadow: none;
+    transform: translateY(2px);
+    background-color: goldenrod;
+}
+img {
+    height: 100px;
+    margin: 10px;
+}
+h1 {
+    display: inline-block;
+}
+#feedback {
+    margin: 20px;
+    font-size: 150%;
+}
+.albumCoverFig {
+    position: relative;
+    height: 150px;
+}
+.albumCovers {
+    height: 100%;
+}
+.albumCoverCaption{
+    position: absolute;
+    bottom: -9px;
+    right: -6px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}

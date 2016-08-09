@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kanye Guess</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="gameController as gc">
+<header>
+    <div class="col-xs-2">
+        <img src="images/yehappy.png">
+    </div>
+    <h1 class="col-xs-8">Can You Guess the Kanye Song?</h1>
+    <div class="col-xs-2">
+        <img  src="images/yesad.jpeg">
+    </div>
+</header>
+<div class="mainContent col-xs-offset-2 col-xs-8">
+    <div class="guessContainer col-xs-8">
+        <input type="text" id="guess" ng-hide="!gc.awaitingGuess">
+        <button ng-click="gc.submitGuess()" ng-hide="!gc.awaitingGuess">Submit Guess</button>
+        <button ng-click="gc.pickSong()" ng-hide="gc.cd.length == 0">New Song</button>
+    </div>
+    <div class="helpButtons col-xs-12">
+        <button ng-show="gc.currentSong.samples.length > 0" ng-click="gc.showSample()">give me a sample</button>
+        <button ng-show="gc.currentSong.features.length > 0" ng-click="gc.showFeature()">give me a feature</button>
+        <button ng-show="gc.currentSong.producers.length > 0" ng-click = "gc.showProducer()">give me a producer</button>
+        <button ng-show="gc.currentSong.difficultLine.length > 0" ng-click="gc.showDifficultLine()">give me a difficult line</button>
+        <button ng-show="gc.currentSong.mediumLine.length > 0" ng-click="gc.showMediumLine()">give me a kinda easy line</button>
+        <button ng-show="gc.currentSong.easyLine.length > 0" ng-click="gc.showEasyLine()">give me a really easy line</button>
+        <button ng-click="gc.showSongLength()" ng-hide="gc.timeShown">give me the length of the song</button>
+    </div>
+    <div class="col-xs-12">
+        <p id="feedback"></p>
+    </div>
+    <div class="stats col-xs-12" >
+        <h4> Score: {{gc.score}}</h4>
+        <h4> Best: {{gc.best}}</h4>
+        <h4> Average: {{gc.average}}</h4>
+        <h4> Total Score: {{gc.sum}}</h4>
+    </div>
+    <div class="albumCoverDisplay col-xs-10">
+        <figure class="albumCoverFig col-xs-2" ng-show="gc.cdSongsGuessed > 0">
+            <img class="albumCovers" src="images/cd.jpg">
+            <figcaption class="albumCoverCaption">{{gc.cdSongsGuessed}}/{{gc.cdLength}}</figcaption>
+        </figure>
+        <figure class="albumCoverFig col-xs-2" ng-show="gc.lrSongsGuessed > 0">
+            <img class="albumCovers" src="images/lr.jpg">
+            <figcaption class="albumCoverCaption">{{gc.lrSongsGuessed}}/{{gc.lrLength}}</figcaption>
+        </figure>
+    </div>
+</div>
+</body>
+</html>
