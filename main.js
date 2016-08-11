@@ -32,6 +32,7 @@ app.controller('gameController', function () {
             title: /^intro$/,
             album: 'College Dropout',
             trackNum: 1,
+            albumYear: 2004,
             producers: ['Kanye'],
             features: [],
             samples: [],
@@ -43,6 +44,7 @@ app.controller('gameController', function () {
         {
             title: /^we don[\']?t care$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 2,
             producers: ['Kanye'],
             features: [],
@@ -54,6 +56,7 @@ app.controller('gameController', function () {
         }, {
             title: /^graduation day$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 3,
             producers: ['Kanye'],
             features: [],
@@ -65,6 +68,7 @@ app.controller('gameController', function () {
         }, {
             title: /^all falls down$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 4,
             producers: ['Kanye'],
             features: ['Syleena Johnson'],
@@ -77,6 +81,7 @@ app.controller('gameController', function () {
         {
             title: /^i[\']?ll fly away$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 5,
             producers: ['Kanye'],
             features: [],
@@ -89,6 +94,7 @@ app.controller('gameController', function () {
         {
             title: /^spaceship$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 6,
             producers: ['Kanye'],
             features: ['GLC', 'Consequence'],
@@ -101,6 +107,7 @@ app.controller('gameController', function () {
         {
             title: /^jesus walks$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 7,
             producers: ['Kanye'],
             features: [],
@@ -113,6 +120,7 @@ app.controller('gameController', function () {
         {
             title: /^never let me down$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 8,
             producers: ['Kanye'],
             features: ['J. Ivy', 'Jay Z'],
@@ -125,6 +133,7 @@ app.controller('gameController', function () {
         {
             title: /^get [\']?em high$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 9,
             producers: ['Kanye'],
             features: ['Talib Kweli', 'Common'],
@@ -137,6 +146,7 @@ app.controller('gameController', function () {
         {
             title: /^workout plan$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 10,
             producers: ['Kanye'],
             features: [],
@@ -149,6 +159,7 @@ app.controller('gameController', function () {
         {
             title: /^(the )?new workout plan$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 11,
             producers: ['Kanye'],
             features: [],
@@ -161,6 +172,7 @@ app.controller('gameController', function () {
         {
             title: /^slow jamz$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 12,
             producers: ['Kanye'],
             features: ['Jamie Foxx', 'Twista'],
@@ -173,6 +185,7 @@ app.controller('gameController', function () {
         {
             title: /^breathe in[,]? breathe out$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 13,
             producers: ['Brian \"All Day\" Miller', 'Kanye'],
             features: ['Ludacris'],
@@ -185,6 +198,7 @@ app.controller('gameController', function () {
         {
             title: /^school spirit skit 1$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 14,
             producers: ['Kanye'],
             features: [],
@@ -197,6 +211,7 @@ app.controller('gameController', function () {
         {
             title: /^school spirit$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 15,
             producers: ['Kanye'],
             features: [],
@@ -209,6 +224,7 @@ app.controller('gameController', function () {
         {
             title: /^school spirit skit 2$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 16,
             producers: ['Kanye'],
             features: [],
@@ -221,6 +237,7 @@ app.controller('gameController', function () {
         {
             title: /^lil jimmy skit$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 17,
             producers: ['Kanye'],
             features: [],
@@ -233,6 +250,7 @@ app.controller('gameController', function () {
         {
             title: /^two words$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 18,
             producers: ['Kanye'],
             features: ['The Harlem Boys Choir', 'Freeway', 'Mos Def'],
@@ -245,6 +263,7 @@ app.controller('gameController', function () {
         {
             title: /^through the wire$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 19,
             producers: ['Kanye'],
             features: [],
@@ -257,6 +276,7 @@ app.controller('gameController', function () {
         {
             title: /^family business$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 20,
             producers: ['Kanye'],
             features: [],
@@ -269,6 +289,7 @@ app.controller('gameController', function () {
         {
             title: /^last call$/,
             album: 'College Dropout',
+            albumYear: 2004,
             trackNum: 21,
             producers: ['Evidence', 'Kanye'],
             features: [],
@@ -281,6 +302,7 @@ app.controller('gameController', function () {
         {
             title: /^wake up mr[\.]? west$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 1,
             producers: [],
             features: [],
@@ -293,6 +315,7 @@ app.controller('gameController', function () {
         {
             title: /^heard [\']?em say$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 2,
             producers: ['Jon Brion','Kanye'],
             features: ['Adam Levine'],
@@ -305,6 +328,7 @@ app.controller('gameController', function () {
         {
             title: /^touch the sky$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 3,
             producers: ['Just Blaze'],
             features: ['Lupe Fiasco'],
@@ -317,6 +341,7 @@ app.controller('gameController', function () {
         {
             title: /^gold digger$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 4,
             producers: ['Jon Brion','Kanye'],
             features: ['Jamie Foxx'],
@@ -329,6 +354,7 @@ app.controller('gameController', function () {
         {
             title: /^skit [#]?1$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 5,
             producers: [],
             features: [],
@@ -341,6 +367,7 @@ app.controller('gameController', function () {
         {
             title: /^drive slow$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 6,
             producers: ['Kanye'],
             features: ['GLC','Paul Wall'],
@@ -353,6 +380,7 @@ app.controller('gameController', function () {
         {
             title: /^my way home$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 7,
             producers: ['Kanye'],
             features: ['Common'],
@@ -365,6 +393,7 @@ app.controller('gameController', function () {
         {
             title: /^crack music$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 8,
             producers: ['Jon Brion','Kanye'],
             features: ['Game'],
@@ -377,6 +406,7 @@ app.controller('gameController', function () {
         {
             title: /^Roses$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 9,
             producers: ['Jon Brion','Kanye'],
             features: [],
@@ -389,6 +419,7 @@ app.controller('gameController', function () {
         {
             title: /^bring me down$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 10,
             producers: ['Jon Brion','Kanye'],
             features: ['Brandy'],
@@ -401,6 +432,7 @@ app.controller('gameController', function () {
         {
             title: /^addiction$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 11,
             producers: ['Jon Brion','Kanye'],
             features: [],
@@ -413,6 +445,7 @@ app.controller('gameController', function () {
         {
             title: /^skit [#]?2$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 12,
             producers: [],
             features: [],
@@ -425,6 +458,7 @@ app.controller('gameController', function () {
         {
             title: /^diamonds from sierra leone [\(]?remix[\)]?$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 13,
             producers: ['Jon Brion','Devo Springsteen','Kanye'],
             features: ['Jay Z'],
@@ -437,6 +471,7 @@ app.controller('gameController', function () {
         {
             title: /^we major$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 14,
             producers: ['Warryn Campbell','Jon Brion','Kanye'],
             features: ['Really Doe', 'Nas'],
@@ -449,6 +484,7 @@ app.controller('gameController', function () {
         {
             title: /^skit [#]?3$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 15,
             producers: [],
             features: [],
@@ -461,6 +497,7 @@ app.controller('gameController', function () {
         {
             title: /^hey mama$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 16,
             producers: ['Jon Brion','Kanye'],
             features: [],
@@ -473,6 +510,7 @@ app.controller('gameController', function () {
         {
             title: /^celebration$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 17,
             producers: ['Jon Brion','Kanye'],
             features: [],
@@ -485,6 +523,7 @@ app.controller('gameController', function () {
         {
             title: /^skit [#]?4$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 18,
             producers: [],
             features: [],
@@ -497,6 +536,7 @@ app.controller('gameController', function () {
         {
             title: /^gone$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 19,
             producers: ['Kanye'],
             features: ['Consequence','Cam\'ron'],
@@ -509,6 +549,7 @@ app.controller('gameController', function () {
         {
             title: /^diamonds from sierra leone$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 20,
             producers: ['Jon Brion','Devo Springsteen','Kanye'],
             features: [],
@@ -521,6 +562,7 @@ app.controller('gameController', function () {
         {
             title: /^late$/,
             album: 'Late Registration',
+            albumYear: 2005,
             trackNum: 21,
             producers: ['Kanye'],
             features: [],
@@ -533,6 +575,7 @@ app.controller('gameController', function () {
         {
             title: /^good morning$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 1,
             producers: ['Kanye'],
             features: [],
@@ -545,6 +588,7 @@ app.controller('gameController', function () {
         {
             title: /^champion$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 2,
             producers: ['Brian \'All Day\' Miller','Kanye'],
             features: [],
@@ -557,6 +601,7 @@ app.controller('gameController', function () {
         {
             title: /^stronger$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 3,
             producers: ['Mike Dean','Kanye'],
             features: [],
@@ -569,6 +614,7 @@ app.controller('gameController', function () {
         {
             title: /^i wonder$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 4,
             producers: ['Kanye'],
             features: [],
@@ -581,6 +627,7 @@ app.controller('gameController', function () {
         {
             title: /^good life$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 5,
             producers: ['DJ Toomp', 'Mike Dean','Kanye'],
             features: ['T-Pain'],
@@ -593,6 +640,7 @@ app.controller('gameController', function () {
         {
             title: /^can[\']?t tell me nothing$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 6,
             producers: ['DJ Toomp','Kanye'],
             features: [],
@@ -605,6 +653,7 @@ app.controller('gameController', function () {
         {
             title: /^barry bonds$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 7,
             producers: ['Nottz','Kanye'],
             features: ['Lil Wayne'],
@@ -617,6 +666,7 @@ app.controller('gameController', function () {
         {
             title: /^drunk and hot girls$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 8,
             producers: ['Jon Brion','Kanye'],
             features: ['Mos Def'],
@@ -629,6 +679,7 @@ app.controller('gameController', function () {
         {
             title: /^flashing lights$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 9,
             producers: ['Kanye'],
             features: ['Dwele'],
@@ -641,6 +692,7 @@ app.controller('gameController', function () {
         {
             title: /^everything i am$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 10,
             producers: ['Eric Hudson','Kanye'],
             features: ['DJ Premier'],
@@ -653,6 +705,7 @@ app.controller('gameController', function () {
         {
             title: /^the glory$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 11,
             producers: ['Gee Robertson','Plain Pat','Kanye'],
             features: [],
@@ -665,6 +718,7 @@ app.controller('gameController', function () {
         {
             title: /^homecoming$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 12,
             producers: ['Warryn Campbell','Kanye'],
             features: ['Chris Martin'],
@@ -677,6 +731,7 @@ app.controller('gameController', function () {
         {
             title: /^big brother$/,
             album: 'Graduation',
+            albumYear: 2007,
             trackNum: 13,
             producers: ['DJ Toomp'],
             features: [],
@@ -689,6 +744,7 @@ app.controller('gameController', function () {
         {
             title: /^say you will$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 1,
             producers: ['Kanye'],
             features: [],
@@ -701,6 +757,7 @@ app.controller('gameController', function () {
         {
             title: /^welcome to heartbreak$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 2,
             producers: ['Jeff Bhasker','Plain Pat','Kanye'],
             features: ['Kid Cudi'],
@@ -713,6 +770,7 @@ app.controller('gameController', function () {
         {
             title: /^heartless$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 3,
             producers: ['No I.D.','Kanye'],
             features: [],
@@ -725,6 +783,7 @@ app.controller('gameController', function () {
         {
             title: /^amazing$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 4,
             producers: ['Jeff Bhasker','Kanye'],
             features: ['Young Jeezy'],
@@ -737,6 +796,7 @@ app.controller('gameController', function () {
         {
             title: /^love lockdown$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 5,
             producers: ['Jeff Bhasker','Kanye'],
             features: [],
@@ -749,6 +809,7 @@ app.controller('gameController', function () {
         {
             title: /^paranoid$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 6,
             producers: ['Jeff Bhasker', 'Plain Pat','Kanye'],
             features: ['Mr Hudson'],
@@ -761,6 +822,7 @@ app.controller('gameController', function () {
         {
             title: /^robocop$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 7,
             producers: ['Kanye'],
             features: [],
@@ -773,6 +835,7 @@ app.controller('gameController', function () {
         {
             title: /^street lights$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 8,
             producers: ['Mr Hudson','Kanye'],
             features: [],
@@ -785,6 +848,7 @@ app.controller('gameController', function () {
         {
             title: /^bad news$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 9,
             producers: ['Kanye'],
             features: [],
@@ -797,6 +861,7 @@ app.controller('gameController', function () {
         {
             title: /^see you in my nightmares$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 10,
             producers: ['No I.D.','Kanye'],
             features: ['Lil Wayne'],
@@ -809,6 +874,7 @@ app.controller('gameController', function () {
         {
             title: /^coldest winter$/,
             album: '808s & Heartbreak',
+            albumYear: 2008,
             trackNum: 11,
             producers: ['Jeff Bhasker', 'No I.D.','Kanye'],
             features: [],
@@ -821,6 +887,7 @@ app.controller('gameController', function () {
         {
             title: /^dark fantasy$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 1,
             producers: ['Jeff Bhasker','No I.D.','The RZA','Mike Dean','Kanye'],
             features: ['Bon Iver', 'Nicki Minaj'],
@@ -833,6 +900,7 @@ app.controller('gameController', function () {
         {
             title: /^gorgeous$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 2,
             producers: ['Mike Dean','No I.D.','Kanye'],
             features: ['Kid Cudi', 'Raekwon'],
@@ -845,6 +913,7 @@ app.controller('gameController', function () {
         {
             title: /^power$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 3,
             producers: ['S1','Jeff Bhasker','Mike Dean','Andrew Dawson','Kanye'],
             features: ['Dwele'],
@@ -857,6 +926,7 @@ app.controller('gameController', function () {
         {
             title: /^all of the lights [\(]?interlude[\)]?$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 4,
             producers: ['Mike Dean','Kanye'],
             features: [],
@@ -869,6 +939,7 @@ app.controller('gameController', function () {
         {
             title: /^all of the lights$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 5,
             producers: ['Jeff Bhasker','Kanye'],
             features: ['Fergie','Kid Cudi','Rihanna'],
@@ -881,6 +952,7 @@ app.controller('gameController', function () {
         {
             title: /^monster$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 6,
             producers: ['Plain Pat','Mike Dean','Kanye'],
             features: ['Jay Z','Rick Ross','Bon Iver', 'Nicki Minaj'],
@@ -893,6 +965,7 @@ app.controller('gameController', function () {
         {
             title: /^so appalled$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 7,
             producers: ['No I.D.','Mike Dean','Kanye'],
             features: ['Swizz Beatz', 'Jay Z','Pusha T', 'The RZA', 'Cyhi the Prince'],
@@ -905,6 +978,7 @@ app.controller('gameController', function () {
         {
             title: /^devil in a new dress$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 8,
             producers: ['Bink!', 'Mike Dean'],
             features: ['Rick Ross'],
@@ -917,6 +991,7 @@ app.controller('gameController', function () {
         {
             title: /^runaway$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 9,
             producers: ['Emile','Jeff Bhasker','Mike Dean','Kanye'],
             features: ['Tony Williams','Pusha T'],
@@ -929,6 +1004,7 @@ app.controller('gameController', function () {
         {
             title: /^hell of a life$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 10,
             producers: ['Mike Caren','No I.D.','Mike Dean','Kanye'],
             features: [],
@@ -941,6 +1017,7 @@ app.controller('gameController', function () {
         {
             title: /^blame game$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 11,
             producers: ['DJ Frank E','Mike Dean','Kanye'],
             features: ['John Legend'],
@@ -953,6 +1030,7 @@ app.controller('gameController', function () {
         {
             title: /^lost in the world$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 12,
             producers: ['Jeff Bhasker','Kanye'],
             features: ['Bon Iver'],
@@ -965,10 +1043,11 @@ app.controller('gameController', function () {
         {
             title: /^who will survive in america$/,
             album: 'My Beautiful Dark Twisted Fantasy',
+            albumYear: 2010,
             trackNum: 13,
             producers: ['Jeff Bhasker','Kanye'],
             features: [],
-            samples: [],
+            samples: ['\'Comment #1\' by Gil Scott-Heron'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -977,10 +1056,11 @@ app.controller('gameController', function () {
         {
             title: /^on sight$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 1,
             producers: ['Benji B','Daft Punk','Mike Dean','Kanye'],
             features: [],
-            samples: [],
+            samples: ['\'Sermon (He\'ll Give Us What We Really Need)\' by HOly Name of Mary Choral Family'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -989,6 +1069,7 @@ app.controller('gameController', function () {
         {
             title: /^black skinhead$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 2,
             producers: ['Jack Donoghue','Noah Goldstein','Brodinski','Lupe Fiasco', 'Gesaffelstein','Daft Punk','No I.D.','Mike Dean','Kanye'],
             features: [],
@@ -1001,10 +1082,11 @@ app.controller('gameController', function () {
         {
             title: /^i am a god$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 3,
             producers: ['Hudson Mohawke', 'Daft Punk','Mike Dean','Kanye'],
             features: ['Justin Vernon'],
-            samples: [],
+            samples: ['\'Forward Inna Dem Clothes\' by Capleton', '\'Are Zindagi Hai Khel\' by R.D. Burman'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1013,10 +1095,11 @@ app.controller('gameController', function () {
         {
             title: /^new slaves$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 4,
             producers: ['Teachers','Shama Joseph','Travis Scott','Che Pope','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Frank Ocean'],
-            samples: [],
+            samples: ['\'Gyongyhaju Lany\' by Omega', '\'Gossip Files\' by Kanye West', '\'Cruel Cold Winter\' by Teachers', '\'HBA War\' by Dutch E Germ'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1025,10 +1108,11 @@ app.controller('gameController', function () {
         {
             title: /^hold my liquor$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 5,
             producers: ['Arca','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Justin Vernon', 'Chief Keef'],
-            samples: [],
+            samples: ['\'Feminine\' by Arca'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1037,10 +1121,11 @@ app.controller('gameController', function () {
         {
             title: /^i[\']?m in it$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 6,
             producers: ['Evian Christ','Dom Solo','Arca','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Justin Vernon', 'Assassin'],
-            samples: [],
+            samples: ['\'Lately\' by Kenny Lattimore'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1049,10 +1134,11 @@ app.controller('gameController', function () {
         {
             title: /^blood on the leaves$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 7,
             producers: ['Carlos Broady','88 Keys','Lunice','Hudson Mohawke','Arca','Mike Dean','Kanye'],
             features: [],
-            samples: [],
+            samples: ['\'Snowflakes Are Dancing\' by Isao Tomita', '\'Down for My Niggaz\' by C-Murder ft. Snoop Dogg and Magic', '\'R U Ready\' by TNGHT', '\'Strange Fruit\' by Nina Simone'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1061,10 +1147,11 @@ app.controller('gameController', function () {
         {
             title: /^guilt trip$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 8,
             producers: ['Ackee Juice Rockers','S1','Travis Scott','Mike Dean','Kanye'],
             features: ['Kid Cudi'],
-            samples: [],
+            samples: ['\'Chief Rocka\' by Lords of the Underground', '\'Blocka (Ackeejuice Rockers Remix)\' by Pusha T ft. Popcaan and Travis Scott'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1073,10 +1160,11 @@ app.controller('gameController', function () {
         {
             title: /^send it up$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 9,
             producers: ['Brodinski','Gesaffelstein','Arca','Daft Punk','Mike Dean','Kanye'],
             features: ['King L'],
-            samples: [],
+            samples: ['\'Stop Live in a De Pass\' by Beenie Man'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1085,10 +1173,11 @@ app.controller('gameController', function () {
         {
             title: /^bound 2$/,
             album: 'Yeezus',
+            albumYear: 2013,
             trackNum: 10,
             producers: ['Eric Danchick','Che Pope','Noah Goldstein','No I.D.','Mike Dean','Kanye'],
             features: ['Charlie Wilson'],
-            samples: [],
+            samples: ['\'Aeroplane(Reprise)\' by Wee', '\'Sweet Nothin\'s\' by Brenda Lee', '\'Bound\' by Ponderosa Twins Plus One'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1097,10 +1186,11 @@ app.controller('gameController', function () {
         {
             title: /^ultralight beam$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 1,
             producers: ['Derek Watkins','DJ Dodger Stadium','Chance the Rapper','Rick Rubin','Swizz Beatz','Plain Pat','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Kelly Price','The-Dream','Kirk Franklin', 'Chance the Rapper'],
-            samples: [],
+            samples: ['\'Late\' by Kanye West', '\'Otis\' by Jay Z and Kanye West', '\'This Little Light of Mine\'', '\'Natalie Praying and She\'s Only 4 Years Old!\''  ],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1109,10 +1199,11 @@ app.controller('gameController', function () {
         {
             title: /^father stretch my hands p(ar)?t[\.]? 1$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 2,
             producers: ['Metro Boommin','Allen Ritter','DJ Dodger Stadium','Rick Rubin','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Kelly Price', 'Kid Cudi'],
-            samples: [],
+            samples: ['\'Jumpman\' by Drake and Future','\'Father I Stretch My Hands\' by Pastor T.L. Barrett'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1121,10 +1212,11 @@ app.controller('gameController', function () {
         {
             title: /^(father stretch my hands)? p(ar)?t[\.]? 2$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 3,
             producers: ['Caroline Shaw','Menace','Rick Rubin','Plain Pat','Kanye'],
             features: ['Caroline Shaw', 'Desiigner'],
-            samples: [],
+            samples: ['\'Street Fighter II Sound Effects\'', '\'Panda\' by Desiigner', '\'Father I Stretch My Hands\' by Pastor T.L. Barrett'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1133,10 +1225,11 @@ app.controller('gameController', function () {
         {
             title: /^famous$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 4,
             producers: ['Kurk Harrell','Havoc','Charlie Heat','Andrew Dawson','Hudson Mohawke','Plain Pat','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Rihanna', 'Swizz Beatz'],
-            samples: [],
+            samples: ['\'Wake Up Mr. West\' by Kanye West', '\'Mi Sono Svegliato E... Ho Chiuso Gli Occhi\' by Il Rovescio Della Medaglia', '\'Do What You Gotta Do\' by Nina Simone', '\'Bam Bam\' by Sister Nancy'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1145,10 +1238,11 @@ app.controller('gameController', function () {
         {
             title: /^feedback$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 5,
             producers: ['Charlie Heat','Noah Goldstein','Kanye'],
             features: [],
-            samples: [],
+            samples: ['\'Talagh\' by Googosh'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1157,10 +1251,11 @@ app.controller('gameController', function () {
         {
             title: /^low lights$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 6,
             producers: ['Mike Dean','DJ Dodger Stadium','Kanye'],
             features: [],
-            samples: [],
+            samples: ['\'So Alive\' by Kings of Tomorrow'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1169,6 +1264,7 @@ app.controller('gameController', function () {
         {
             title: /^highlights$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 7,
             producers: ['Plain Pat','Noah Goldstein','Southside','Velous','Mike Dean','Kanye'],
             features: ['Young Thug'],
@@ -1181,10 +1277,11 @@ app.controller('gameController', function () {
         {
             title: /^freestyle 4$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 8,
             producers: ['Trevor Gureckis','Caroline Shaw','DJ Dodger Stadium','Hudson Mohawke','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Desiigner'],
-            samples: [],
+            samples: ['\'Human\' by Goldfrapp'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1193,6 +1290,7 @@ app.controller('gameController', function () {
         {
             title: /^i love kanye$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 9,
             producers: ['Kanye'],
             features: [],
@@ -1205,10 +1303,11 @@ app.controller('gameController', function () {
         {
             title: /^waves$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 10,
             producers: ['Anthony Kilhoffer','Metro Boomin','Charlie Heat','Hudson Mohawke','Mike Dean','Kanye'],
             features: ['Chris Brown', 'Kid Cudi'],
-            samples: [],
+            samples: ['\'Fantastic Freaks at the Dixie\' by DJ Grand Wizard THeodore and The Fantastic Five'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1217,10 +1316,11 @@ app.controller('gameController', function () {
         {
             title: /^fml$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 11,
             producers: ['Hudson Mohawke','Andrew Dawson','Mitus','Metro Boomin','Noah Goldstein','Mike Dean','Kanye'],
             features: ['The Weeknd'],
-            samples: [],
+            samples: ['\'Hit\' by Section 25'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1229,10 +1329,11 @@ app.controller('gameController', function () {
         {
             title: /^real friends$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 12,
             producers: ['Sevn Thomas','Darren King','Havoc','Mike Dean', 'Noah Goldstein','Frank Dukes','Boi-1da','Kanye'],
             features: ['Ty Dolla Sign'],
-            samples: [],
+            samples: ['\'Couches\' by Frank Dukes', '\'Friends\' by Whodini'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1241,6 +1342,7 @@ app.controller('gameController', function () {
         {
             title: /^wolves$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 13,
             producers: ['Caroline Shaw','Noah Goldstein','Sinjin Hawke','Cashmere Cat','Mike Dean','Kanye'],
             features: ['Sia', 'Vic Mensa'],
@@ -1253,10 +1355,11 @@ app.controller('gameController', function () {
         {
             title: /^frank[\']?s track$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 14,
             producers: ['Sinjin Hawke','Cashmere Cat','Kanye'],
             features: ['Frank Ocean'],
-            samples: [],
+            samples: ['\'Walking Dub\' by Sugar Minott'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1265,6 +1368,7 @@ app.controller('gameController', function () {
         {
             title: /^s[i]+lver surf[e]+r intermission$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 15,
             producers: ['Kanye'],
             features: ['French Montana', 'Max B'],
@@ -1277,10 +1381,11 @@ app.controller('gameController', function () {
         {
             title: /^30 hours$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 16,
             producers: ['Karriem Riggins','Mike Dean','Kanye'],
             features: ['Andre 3000'],
-            samples: [],
+            samples: ['\'Hot in Herre\' by Nelly', '\'E.I.\' by Nelly', '\'Joy\' by Isaac Hayes', '\'Opening\' by Apple Inc.', '\'Answers Me\' by Arthur Russell'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1289,10 +1394,11 @@ app.controller('gameController', function () {
         {
             title: /^no more parties in l[\.]?a[\.]?$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 17,
             producers: ['Madlib','Kanye'],
             features: ['Kendrick Lamar'],
-            samples: [],
+            samples: ['\'Suzie Thundertussy\' by Junie Morrison', '\'Give Me My Love\' Johnny Guitar Watson', '\'Stand Up and Shout About Love\' by Larry Graham', '\'Mighty Healthy\' by Ghostface Killah', '\'NBA Jam Sound Effects\' by EA Sports'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1301,10 +1407,11 @@ app.controller('gameController', function () {
         {
             title: /^facts( [\(]?charlie heat version[\)]?)?$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 18,
             producers: ['Southside','Metro Boomin','Charlie Heat','Kanye'],
             features: [],
-            samples: [],
+            samples: ['\'Dhalsim\' by Yoko Shimomura and Isao Abe'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1313,10 +1420,11 @@ app.controller('gameController', function () {
         {
             title: /^fade$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 19,
             producers: ['DJ Dodger Stadium','Noah Goldstein','Anthony Kilhoffer','Benji B','Charlie Handsome','Mike Dean','Kanye'],
             features: ['Ty Dolla Sign', 'Post Malone'],
-            samples: [],
+            samples: ['\'Mystery of Love\' by Mr. Fingers', '\'Deep Inside\' by Hardrive', '\'I Get Lifted (The Underground Network Mix)\' by Barbara Tucker', '\'(I Know) I\'m Losing You\' by Rare Earth'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1325,10 +1433,11 @@ app.controller('gameController', function () {
         {
             title: /^s(ain)?t[\.]? pablo$/,
             album: 'The Life of Pablo',
+            albumYear: 2016,
             trackNum: 20,
             producers: ['Noah Goldstein','Allen Ritter','Mike Dean','Kanye'],
             features: ['Sampha'],
-            samples: [],
+            samples: ['\'Where I\'m From\' by Jay Z', '\'We Don\'t Care\' by Kanye West'],
             difficultLine: [],
             mediumLine: [],
             easyLine: [],
@@ -1455,10 +1564,16 @@ app.controller('gameController', function () {
                         else this.updateFeedback('The track is later on the album than '+userGuess);
                         this.score -= 5;
                         return;
-                    } else if (i > this.songIndex){
+                    } else if (this.catalog[i].albumYear > this.currentSong.albumYear){
                         this.updateFeedback('The track is on an earlier album than '+ this.catalog[i].album);
                     } else this.updateFeedback('The track is on a later album than ' + this.catalog[i].album);
                     this.score -= 10;
+                    return;
+                }
+            }
+            for (var i = 0; i < this.skippedSongs.length; i++){
+                if (this.skippedSongs[i].title.test(userGuessForComparison)){
+                    this.updateFeedback('You skipped that one');
                     return;
                 }
             }
@@ -1468,7 +1583,7 @@ app.controller('gameController', function () {
                     return;
                 }
             }
-            this.updateFeedback('Don\'t think '+userGuess+' is on a Kanye album');
+            this.updateFeedback('Don\'t think '+userGuess+' is on a Kanye solo album');
             this.score -= 20;
         }
     };
