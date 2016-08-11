@@ -9,16 +9,28 @@ app.controller('gameController', function () {
     this.best = 0;
     this.average = 0;
     this.sum = 0;
-    this.numSongsTried = 0;
+    this.numSongsGuessed = 0;
     this.previousSongs = [];
     this.cdSongsGuessed = 0;
     this.cdLength = 21;
     this.lrSongsGuessed = 0;
     this.lrLength = 21;
+    this.gradSongsGuessed = 0;
+    this.gradLength = 13;
+    this.heartbreakSongsGuessed = 0;
+    this.heartbreakLength = 11;
+    this.mbdtfSongsGuessed = 0;
+    this.mbdtfLength = 13;
+    this.yeezusSongsGuessed = 0;
+    this.yeezusLength = 10;
+    this.pabloSongsGuessed = 0;
+    this.pabloLength = 20;
+    this.guessedCorrectly = false;
+    this.skippedSongs = [];
     this.catalog = [
         {
             title: /^intro$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 1,
             producers: ['Kanye'],
             features: [],
@@ -30,7 +42,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^we don[\']?t care$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 2,
             producers: ['Kanye'],
             features: [],
@@ -41,7 +53,7 @@ app.controller('gameController', function () {
             songLength: '3:59'
         }, {
             title: /^graduation day$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 3,
             producers: ['Kanye'],
             features: [],
@@ -52,7 +64,7 @@ app.controller('gameController', function () {
             songLength: '1:22'
         }, {
             title: /^all falls down$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 4,
             producers: ['Kanye'],
             features: ['Syleena Johnson'],
@@ -64,7 +76,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^i[\']?ll fly away$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 5,
             producers: ['Kanye'],
             features: [],
@@ -76,7 +88,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^spaceship$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 6,
             producers: ['Kanye'],
             features: ['GLC', 'Consequence'],
@@ -88,7 +100,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^jesus walks$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 7,
             producers: ['Kanye'],
             features: [],
@@ -100,7 +112,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^never let me down$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 8,
             producers: ['Kanye'],
             features: ['J. Ivy', 'Jay Z'],
@@ -112,7 +124,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^get [\']?em high$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 9,
             producers: ['Kanye'],
             features: ['Talib Kweli', 'Common'],
@@ -124,7 +136,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^workout plan$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 10,
             producers: ['Kanye'],
             features: [],
@@ -136,7 +148,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^(the )?new workout plan$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 11,
             producers: ['Kanye'],
             features: [],
@@ -148,7 +160,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^slow jamz$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 12,
             producers: ['Kanye'],
             features: ['Jamie Foxx', 'Twista'],
@@ -160,7 +172,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^breathe in[,]? breathe out$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 13,
             producers: ['Brian \"All Day\" Miller', 'Kanye'],
             features: ['Ludacris'],
@@ -172,7 +184,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit skit 1$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 14,
             producers: ['Kanye'],
             features: [],
@@ -184,7 +196,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 15,
             producers: ['Kanye'],
             features: [],
@@ -196,7 +208,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit skit 2$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 16,
             producers: ['Kanye'],
             features: [],
@@ -208,7 +220,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^lil jimmy skit$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 17,
             producers: ['Kanye'],
             features: [],
@@ -220,7 +232,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^two words$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 18,
             producers: ['Kanye'],
             features: ['The Harlem Boys Choir', 'Freeway', 'Mos Def'],
@@ -232,7 +244,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^through the wire$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 19,
             producers: ['Kanye'],
             features: [],
@@ -244,7 +256,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^family business$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 20,
             producers: ['Kanye'],
             features: [],
@@ -256,7 +268,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^last call$/,
-            album: 'college dropout',
+            album: 'College Dropout',
             trackNum: 21,
             producers: ['Evidence', 'Kanye'],
             features: [],
@@ -268,7 +280,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^wake up mr[\.]? west$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 1,
             producers: [],
             features: [],
@@ -280,7 +292,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^heard [\']?em say$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 2,
             producers: ['Jon Brion','Kanye'],
             features: ['Adam Levine'],
@@ -292,7 +304,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^touch the sky$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 3,
             producers: ['Just Blaze'],
             features: ['Lupe Fiasco'],
@@ -304,7 +316,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^gold digger$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 4,
             producers: ['Jon Brion','Kanye'],
             features: ['Jamie Foxx'],
@@ -316,7 +328,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^skit [#]?1$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 5,
             producers: [],
             features: [],
@@ -328,7 +340,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^drive slow$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 6,
             producers: ['Kanye'],
             features: ['GLC','Paul Wall'],
@@ -340,11 +352,11 @@ app.controller('gameController', function () {
         },
         {
             title: /^my way home$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 7,
             producers: ['Kanye'],
             features: ['Common'],
-            samples: ['\'Home is Where the Hatred Is\' by Gil Scott Heron'],
+            samples: ['\'Home is Where the Hatred Is\' by Gil Scott-Heron'],
             difficultLine: ['The young smoke grass in grassless jungles'],
             mediumLine: ['I stroll where souls get lost like Vegas'],
             easyLine: ['I left three days ago, but no one seems to know I\'m gone'],
@@ -352,7 +364,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^crack music$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 8,
             producers: ['Jon Brion','Kanye'],
             features: ['Game'],
@@ -364,7 +376,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^Roses$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 9,
             producers: ['Jon Brion','Kanye'],
             features: [],
@@ -376,7 +388,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^bring me down$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 10,
             producers: ['Jon Brion','Kanye'],
             features: ['Brandy'],
@@ -388,7 +400,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^addiction$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 11,
             producers: ['Jon Brion','Kanye'],
             features: [],
@@ -400,7 +412,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^skit [#]?2$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 12,
             producers: [],
             features: [],
@@ -412,7 +424,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^diamonds from sierra leone [\(]?remix[\)]?$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 13,
             producers: ['Jon Brion','Devo Springsteen','Kanye'],
             features: ['Jay Z'],
@@ -424,7 +436,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^we major$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 14,
             producers: ['Warryn Campbell','Jon Brion','Kanye'],
             features: ['Really Doe', 'Nas'],
@@ -436,7 +448,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^skit [#]?3$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 15,
             producers: [],
             features: [],
@@ -448,7 +460,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^hey mama$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 16,
             producers: ['Jon Brion','Kanye'],
             features: [],
@@ -460,7 +472,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^celebration$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 17,
             producers: ['Jon Brion','Kanye'],
             features: [],
@@ -472,7 +484,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^skit [#]?4$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 18,
             producers: [],
             features: [],
@@ -484,7 +496,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^gone$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 19,
             producers: ['Kanye'],
             features: ['Consequence','Cam\'ron'],
@@ -496,7 +508,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^diamonds from sierra leone$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 20,
             producers: ['Jon Brion','Devo Springsteen','Kanye'],
             features: [],
@@ -508,7 +520,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^late$/,
-            album: 'late registration',
+            album: 'Late Registration',
             trackNum: 21,
             producers: ['Kanye'],
             features: [],
@@ -517,32 +529,846 @@ app.controller('gameController', function () {
             mediumLine: ['Like them eskimos, what would you do for a Klondike?'],
             easyLine: ['So turn this motherfucker up only if it feels right'],
             songLength: '3:50'
+        },
+        {
+            title: /^good morning$/,
+            album: 'Graduation',
+            trackNum: 1,
+            producers: ['Kanye'],
+            features: [],
+            samples: ['\'Wake Up Mr. West\' by Kanye West','\'Someone Saved My Life Tonight\' by Elton John', '\'The Ruler\'s Back\' by Jay Z'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:15'
+        },
+        {
+            title: /^champion$/,
+            album: 'Graduation',
+            trackNum: 2,
+            producers: ['Brian \'All Day\' Miller','Kanye'],
+            features: [],
+            samples: ['\'Kid Charlemagne\' by Steely Dan'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:47'
+        },
+        {
+            title: /^stronger$/,
+            album: 'Graduation',
+            trackNum: 3,
+            producers: ['Mike Dean','Kanye'],
+            features: [],
+            samples: ['\'Harder Better Faster Stronger\' by Daft Punk'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '5:11'
+        },
+        {
+            title: /^i wonder$/,
+            album: 'Graduation',
+            trackNum: 4,
+            producers: ['Kanye'],
+            features: [],
+            samples: ['\'Ambitionz Az a Ridah\' by 2Pac', '\'My Song\' by Labi Siffre'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:03'
+        },
+        {
+            title: /^good life$/,
+            album: 'Graduation',
+            trackNum: 5,
+            producers: ['DJ Toomp', 'Mike Dean','Kanye'],
+            features: ['T-Pain'],
+            samples: ['\'School Spirit\' by Kanye West', '\'In Da Club\' by 50 Cent', '\'PYT\' by Michael Jackson'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:27'
+        },
+        {
+            title: /^can[\']?t tell me nothing$/,
+            album: 'Graduation',
+            trackNum: 6,
+            producers: ['DJ Toomp','Kanye'],
+            features: [],
+            samples: ['\'I Got Money\' by Young Jeezy ft. T.I.', '\'They Reminisce Over You\' by Pete Rock and C.L. Smooth'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:30'
+        },
+        {
+            title: /^barry bonds$/,
+            album: 'Graduation',
+            trackNum: 7,
+            producers: ['Nottz','Kanye'],
+            features: ['Lil Wayne'],
+            samples: ['\'Long Red\' by Mountain'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:24'
+        },
+        {
+            title: /^drunk and hot girls$/,
+            album: 'Graduation',
+            trackNum: 8,
+            producers: ['Jon Brion','Kanye'],
+            features: ['Mos Def'],
+            samples: ['\'Sing Swan Song\' by Can'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '5:13'
+        },
+        {
+            title: /^flashing lights$/,
+            album: 'Graduation',
+            trackNum: 9,
+            producers: ['Kanye'],
+            features: ['Dwele'],
+            samples: ['\'On Coming From a Broken Home (Parts 1 & 2)\' by Gil Scott-Heron','\'Green Lights\' by Charles Hamilton', '\'Sky High\' by Kid Cudi', '\'Still Here\' by Girl Talk', '\'I Want Those Flashing Lights\' by Colin Munroe'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:57'
+        },
+        {
+            title: /^everything i am$/,
+            album: 'Graduation',
+            trackNum: 10,
+            producers: ['Eric Hudson','Kanye'],
+            features: ['DJ Premier'],
+            samples: ['\'If We Can\'t Be Lover\' by Prince Phillip Mitchell', '\'Bring the Noise\' by Public Enemy', '\'Jimbrowski\' by Jungle Brothers'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:47'
+        },
+        {
+            title: /^the glory$/,
+            album: 'Graduation',
+            trackNum: 11,
+            producers: ['Gee Robertson','Plain Pat','Kanye'],
+            features: [],
+            samples: ['\'Save the Country\' by Laura Nyro', '\'Long Red\' by Mountain', '\'Award Tour\' by A Tribe Called Quest ft. Trugoy th Dove', '\'We Major\' by Kanye West ft. Nas and Really Doe'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:32'
+        },
+        {
+            title: /^homecoming$/,
+            album: 'Graduation',
+            trackNum: 12,
+            producers: ['Warryn Campbell','Kanye'],
+            features: ['Chris Martin'],
+            samples: ['\'Streets is Talking\' by Jay Z ft. Beanie Sigel', '\'High Power Rap\' by Crash Crew', '\'Home\' by Kanye West ft. John Legend'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:23'
+        },
+        {
+            title: /^big brother$/,
+            album: 'Graduation',
+            trackNum: 13,
+            producers: ['DJ Toomp'],
+            features: [],
+            samples: ['\'Hola Hovito\' by Jay Z', 'It\'s Gonna Be Lonely\' by Prince','\'Dirt Off Your Shoulder\' by Jay Z'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:47'
+        },
+        {
+            title: /^say you will$/,
+            album: '808s & Heartbreak',
+            trackNum: 1,
+            producers: ['Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '6:17'
+        },
+        {
+            title: /^welcome to heartbreak$/,
+            album: '808s & Heartbreak',
+            trackNum: 2,
+            producers: ['Jeff Bhasker','Plain Pat','Kanye'],
+            features: ['Kid Cudi'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:22'
+        },
+        {
+            title: /^heartless$/,
+            album: '808s & Heartbreak',
+            trackNum: 3,
+            producers: ['No I.D.','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:30'
+        },
+        {
+            title: /^amazing$/,
+            album: '808s & Heartbreak',
+            trackNum: 4,
+            producers: ['Jeff Bhasker','Kanye'],
+            features: ['Young Jeezy'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:58'
+        },
+        {
+            title: /^love lockdown$/,
+            album: '808s & Heartbreak',
+            trackNum: 5,
+            producers: ['Jeff Bhasker','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:30'
+        },
+        {
+            title: /^paranoid$/,
+            album: '808s & Heartbreak',
+            trackNum: 6,
+            producers: ['Jeff Bhasker', 'Plain Pat','Kanye'],
+            features: ['Mr Hudson'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:37'
+        },
+        {
+            title: /^robocop$/,
+            album: '808s & Heartbreak',
+            trackNum: 7,
+            producers: ['Kanye'],
+            features: [],
+            samples: ['\'Kissing in the Rain\' by Patrick Doyle'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:34'
+        },
+        {
+            title: /^street lights$/,
+            album: '808s & Heartbreak',
+            trackNum: 8,
+            producers: ['Mr Hudson','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:09'
+        },
+        {
+            title: /^bad news$/,
+            album: '808s & Heartbreak',
+            trackNum: 9,
+            producers: ['Kanye'],
+            features: [],
+            samples: ['\'See-Line Woman\' by Nina Simone'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:58'
+        },
+        {
+            title: /^see you in my nightmares$/,
+            album: '808s & Heartbreak',
+            trackNum: 10,
+            producers: ['No I.D.','Kanye'],
+            features: ['Lil Wayne'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:18'
+        },
+        {
+            title: /^coldest winter$/,
+            album: '808s & Heartbreak',
+            trackNum: 11,
+            producers: ['Jeff Bhasker', 'No I.D.','Kanye'],
+            features: [],
+            samples: ['\'Memories Fade\' by Tears for Fears'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:44'
+        },
+        {
+            title: /^dark fantasy$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 1,
+            producers: ['Jeff Bhasker','No I.D.','The RZA','Mike Dean','Kanye'],
+            features: ['Bon Iver', 'Nicki Minaj'],
+            samples: ['\'In High Places\' by Mike Oldfield ft. Jon Anderson', '\'GOOD Music Cypher\' by Kanye West and Common ft. Pusha T, Big Sean, and Cyhi Da Prince'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:40'
+        },
+        {
+            title: /^gorgeous$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 2,
+            producers: ['Mike Dean','No I.D.','Kanye'],
+            features: ['Kid Cudi', 'Raekwon'],
+            samples: ['\'You Showed Me\' by Enoch Light and the Glittering Guitars'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '5:57'
+        },
+        {
+            title: /^power$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 3,
+            producers: ['S1','Jeff Bhasker','Mike Dean','Andrew Dawson','Kanye'],
+            features: ['Dwele'],
+            samples: ['\'It\'s Your Thing\' by Cold Grits', '\'Afromerica\' by Continent Number 6', '\'21st Century Schizoid Man\' by King Crimson'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:52'
+        },
+        {
+            title: /^all of the lights [\(]?interlude[\)]?$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 4,
+            producers: ['Mike Dean','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '1:02'
+        },
+        {
+            title: /^all of the lights$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 5,
+            producers: ['Jeff Bhasker','Kanye'],
+            features: ['Fergie','Kid Cudi','Rihanna'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:59'
+        },
+        {
+            title: /^monster$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 6,
+            producers: ['Plain Pat','Mike Dean','Kanye'],
+            features: ['Jay Z','Rick Ross','Bon Iver', 'Nicki Minaj'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '6:18'
+        },
+        {
+            title: /^so appalled$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 7,
+            producers: ['No I.D.','Mike Dean','Kanye'],
+            features: ['Swizz Beatz', 'Jay Z','Pusha T', 'The RZA', 'Cyhi the Prince'],
+            samples: ['\'You Are - I Am\' by Manfred Mann\'s Earth Band', '\'Think (About It)\' by Lyn Collins', '\'Can\'t Knock the Hustle\' by Jay Z ft. Mary J. Blige'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '6:38'
+        },
+        {
+            title: /^devil in a new dress$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 8,
+            producers: ['Bink!', 'Mike Dean'],
+            features: ['Rick Ross'],
+            samples: ['\'Will You Love Me Tomorrow\' by Smokey Robinson'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '5:52'
+        },
+        {
+            title: /^runaway$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 9,
+            producers: ['Emile','Jeff Bhasker','Mike Dean','Kanye'],
+            features: ['Tony Williams','Pusha T'],
+            samples: ['\'Expo \'83\' by The Backyard Heavies', '\'Mary Jane\' by Rick James', '\'Introduction to Star Time\' by James Brown'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '9:08'
+        },
+        {
+            title: /^hell of a life$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 10,
+            producers: ['Mike Caren','No I.D.','Mike Dean','Kanye'],
+            features: [],
+            samples: ['\'Stud-Spider\' by Tony Joe White', '\'She\'s My Baby\' by The Mojo Men', '\'Iron Man\' by Black Sabbath'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '5:27'
+        },
+        {
+            title: /^blame game$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 11,
+            producers: ['DJ Frank E','Mike Dean','Kanye'],
+            features: ['John Legend'],
+            samples: ['\'Avril 14th\' by Aphex Twin'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '7:49'
+        },
+        {
+            title: /^lost in the world$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 12,
+            producers: ['Jeff Bhasker','Kanye'],
+            features: ['Bon Iver'],
+            samples: ['\'Hook and Sling\' by Eddie Bo', '\'Think (About It)\' by Lyn Collins', '\'Soul Makossa\' by Manu Dibango','\'Comment #1\' by Gil Scott-Heron','\'Woods\' by Bon Iver'],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:16'
+        },
+        {
+            title: /^who will survive in america$/,
+            album: 'My Beautiful Dark Twisted Fantasy',
+            trackNum: 13,
+            producers: ['Jeff Bhasker','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '1:38'
+        },
+        {
+            title: /^on sight$/,
+            album: 'Yeezus',
+            trackNum: 1,
+            producers: ['Benji B','Daft Punk','Mike Dean','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:36'
+        },
+        {
+            title: /^black skinhead$/,
+            album: 'Yeezus',
+            trackNum: 2,
+            producers: ['Jack Donoghue','Noah Goldstein','Brodinski','Lupe Fiasco', 'Gesaffelstein','Daft Punk','No I.D.','Mike Dean','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:08'
+        },
+        {
+            title: /^i am a god$/,
+            album: 'Yeezus',
+            trackNum: 3,
+            producers: ['Hudson Mohawke', 'Daft Punk','Mike Dean','Kanye'],
+            features: ['Justin Vernon'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:51'
+        },
+        {
+            title: /^new slaves$/,
+            album: 'Yeezus',
+            trackNum: 4,
+            producers: ['Teachers','Shama Joseph','Travis Scott','Che Pope','Noah Goldstein','Mike Dean','Kanye'],
+            features: ['Frank Ocean'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:16'
+        },
+        {
+            title: /^hold my liquor$/,
+            album: 'Yeezus',
+            trackNum: 5,
+            producers: ['Arca','Noah Goldstein','Mike Dean','Kanye'],
+            features: ['Justin Vernon', 'Chief Keef'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '5:26'
+        },
+        {
+            title: /^i[\']?m in it$/,
+            album: 'Yeezus',
+            trackNum: 6,
+            producers: ['Evian Christ','Dom Solo','Arca','Noah Goldstein','Mike Dean','Kanye'],
+            features: ['Justin Vernon', 'Assassin'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:54'
+        },
+        {
+            title: /^blood on the leaves$/,
+            album: 'Yeezus',
+            trackNum: 7,
+            producers: ['Carlos Broady','88 Keys','Lunice','Hudson Mohawke','Arca','Mike Dean','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '6:00'
+        },
+        {
+            title: /^guilt trip$/,
+            album: 'Yeezus',
+            trackNum: 8,
+            producers: ['Ackee Juice Rockers','S1','Travis Scott','Mike Dean','Kanye'],
+            features: ['Kid Cudi'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:03'
+        },
+        {
+            title: /^send it up$/,
+            album: 'Yeezus',
+            trackNum: 9,
+            producers: ['Brodinski','Gesaffelstein','Arca','Daft Punk','Mike Dean','Kanye'],
+            features: ['King L'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:58'
+        },
+        {
+            title: /^bound 2$/,
+            album: 'Yeezus',
+            trackNum: 10,
+            producers: ['Eric Danchick','Che Pope','Noah Goldstein','No I.D.','Mike Dean','Kanye'],
+            features: ['Charlie Wilson'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:49'
+        },
+        {
+            title: /^ultralight beam$/,
+            album: 'The Life of Pablo',
+            trackNum: 1,
+            producers: ['Derek Watkins','DJ Dodger Stadium','Chance the Rapper','Rick Rubin','Swizz Beatz','Plain Pat','Noah Goldstein','Mike Dean','Kanye'],
+            features: ['Kelly Price','The-Dream','Kirk Franklin', 'Chance the Rapper'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '5:11'
+        },
+        {
+            title: /^father stretch my hands p(ar)?t[\.]? 1$/,
+            album: 'The Life of Pablo',
+            trackNum: 2,
+            producers: ['Metro Boommin','Allen Ritter','DJ Dodger Stadium','Rick Rubin','Noah Goldstein','Mike Dean','Kanye'],
+            features: ['Kelly Price', 'Kid Cudi'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:12'
+        },
+        {
+            title: /^(father stretch my hands)? p(ar)?t[\.]? 2$/,
+            album: 'The Life of Pablo',
+            trackNum: 3,
+            producers: ['Caroline Shaw','Menace','Rick Rubin','Plain Pat','Kanye'],
+            features: ['Caroline Shaw', 'Desiigner'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:07'
+        },
+        {
+            title: /^famous$/,
+            album: 'The Life of Pablo',
+            trackNum: 4,
+            producers: ['Kurk Harrell','Havoc','Charlie Heat','Andrew Dawson','Hudson Mohawke','Plain Pat','Noah Goldstein','Mike Dean','Kanye'],
+            features: ['Rihanna', 'Swizz Beatz'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:11'
+        },
+        {
+            title: /^feedback$/,
+            album: 'The Life of Pablo',
+            trackNum: 5,
+            producers: ['Charlie Heat','Noah Goldstein','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:23'
+        },
+        {
+            title: /^low lights$/,
+            album: 'The Life of Pablo',
+            trackNum: 6,
+            producers: ['Mike Dean','DJ Dodger Stadium','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:08'
+        },
+        {
+            title: /^highlights$/,
+            album: 'The Life of Pablo',
+            trackNum: 7,
+            producers: ['Plain Pat','Noah Goldstein','Southside','Velous','Mike Dean','Kanye'],
+            features: ['Young Thug'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:14'
+        },
+        {
+            title: /^freestyle 4$/,
+            album: 'The Life of Pablo',
+            trackNum: 8,
+            producers: ['Trevor Gureckis','Caroline Shaw','DJ Dodger Stadium','Hudson Mohawke','Noah Goldstein','Mike Dean','Kanye'],
+            features: ['Desiigner'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:00'
+        },
+        {
+            title: /^i love kanye$/,
+            album: 'The Life of Pablo',
+            trackNum: 9,
+            producers: ['Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '0:44'
+        },
+        {
+            title: /^waves$/,
+            album: 'The Life of Pablo',
+            trackNum: 10,
+            producers: ['Anthony Kilhoffer','Metro Boomin','Charlie Heat','Hudson Mohawke','Mike Dean','Kanye'],
+            features: ['Chris Brown', 'Kid Cudi'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '2:56'
+        },
+        {
+            title: /^fml$/,
+            album: 'The Life of Pablo',
+            trackNum: 11,
+            producers: ['Hudson Mohawke','Andrew Dawson','Mitus','Metro Boomin','Noah Goldstein','Mike Dean','Kanye'],
+            features: ['The Weeknd'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:49'
+        },
+        {
+            title: /^real friends$/,
+            album: 'The Life of Pablo',
+            trackNum: 12,
+            producers: ['Sevn Thomas','Darren King','Havoc','Mike Dean', 'Noah Goldstein','Frank Dukes','Boi-1da','Kanye'],
+            features: ['Ty Dolla Sign'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:04'
+        },
+        {
+            title: /^wolves$/,
+            album: 'The Life of Pablo',
+            trackNum: 13,
+            producers: ['Caroline Shaw','Noah Goldstein','Sinjin Hawke','Cashmere Cat','Mike Dean','Kanye'],
+            features: ['Sia', 'Vic Mensa'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '4:53'
+        },
+        {
+            title: /^frank[\']?s track$/,
+            album: 'The Life of Pablo',
+            trackNum: 14,
+            producers: ['Sinjin Hawke','Cashmere Cat','Kanye'],
+            features: ['Frank Ocean'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '0:37'
+        },
+        {
+            title: /^s[i]+lver surf[e]+r intermission$/,
+            album: 'The Life of Pablo',
+            trackNum: 15,
+            producers: ['Kanye'],
+            features: ['French Montana', 'Max B'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '0:55'
+        },
+        {
+            title: /^30 hours$/,
+            album: 'The Life of Pablo',
+            trackNum: 16,
+            producers: ['Karriem Riggins','Mike Dean','Kanye'],
+            features: ['Andre 3000'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '5:14'
+        },
+        {
+            title: /^no more parties in l[\.]?a[\.]?$/,
+            album: 'The Life of Pablo',
+            trackNum: 17,
+            producers: ['Madlib','Kanye'],
+            features: ['Kendrick Lamar'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '6:04'
+        },
+        {
+            title: /^facts( [\(]?charlie heat version[\)]?)?$/,
+            album: 'The Life of Pablo',
+            trackNum: 18,
+            producers: ['Southside','Metro Boomin','Charlie Heat','Kanye'],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:15'
+        },
+        {
+            title: /^fade$/,
+            album: 'The Life of Pablo',
+            trackNum: 19,
+            producers: ['DJ Dodger Stadium','Noah Goldstein','Anthony Kilhoffer','Benji B','Charlie Handsome','Mike Dean','Kanye'],
+            features: ['Ty Dolla Sign', 'Post Malone'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '3:08'
+        },
+        {
+            title: /^s(ain)?t[\.]? pablo$/,
+            album: 'The Life of Pablo',
+            trackNum: 20,
+            producers: ['Noah Goldstein','Allen Ritter','Mike Dean','Kanye'],
+            features: ['Sampha'],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: [],
+            songLength: '6:01'
         }
+
     ];
     this.pickSong = function () {
-        if (this.currentSong) this.previousSongs.push(this.currentSong);
+        if (this.currentSong){
+            if (this.guessedCorrectly) this.previousSongs.push(this.currentSong);
+            else this.skippedSongs.push(this.currentSong);
+        }
+        if (this.catalog.length == 0){
+            this.catalog = this.skippedSongs;
+            this.skippedSongs = [];
+            console.log('catalog: ', this.catalog);
+            console.log('skippedSongs: ', this.skippedSongs);
+        }
+        console.log('skipped songs', this.skippedSongs);
         this.songIndex = Math.floor((Math.random() * this.catalog.length));
         this.currentSong = this.catalog.splice(this.songIndex, 1)[0];
-        console.log(this.currentSong);
+        console.log('current song: ', this.currentSong);
+        console.log('songs left: '+this.catalog.length);
         this.clearInput();
         this.score = 100;
         this.awaitingGuess = true;
-        if (this.numSongsTried > 0) this.calculateAverage();
         this.timeShown = false;
-        this.numSongsTried++;
         this.updateFeedback('Try this one!');
     };
     this.showSample = function () {
         this.updateFeedback(this.currentSong.samples.shift() + ' is sampled on the track');
-        this.score -= 2;
+        this.score -= 4;
     };
     this.showFeature = function () {
         this.updateFeedback(this.currentSong.features.shift() + ' is featured on the track');
-        this.score -= 10;
+        this.score -= 15;
     };
     this.showProducer = function () {
         this.updateFeedback(this.currentSong.producers.shift() + ' did production on the track');
-        this.score -= 5;
+        this.score -= 2;
     };
     this.showDifficultLine = function () {
         this.updateFeedback('Ok, here\'s a tough one: ' + this.currentSong.difficultLine.shift());
@@ -559,33 +1385,63 @@ app.controller('gameController', function () {
     this.showSongLength = function () {
         this.updateFeedback('The track is ' + this.currentSong.songLength + ' long');
         this.timeShown = true;
-        this.score -= 8;
+        this.score -= 12;
     };
     this.submitGuess = function () {
         var userGuess = $('#guess').val();
         var userGuessForComparison = userGuess.toLowerCase();
-
         if (userGuessForComparison.length == 0) return;
         this.clearInput();
         if (this.currentSong.title.test(userGuessForComparison)) {
             this.updateFeedback('You got it! Your score for this track is ' + this.score);
+            this.guessedCorrectly = true;
+            this.numSongsGuessed++;
             this.setBest();
             this.sum += this.score;
             this.calculateAverage();
             this.timeShown = true;
             this.awaitingGuess = false;
             switch(this.currentSong.album){
-                case 'college dropout':
+                case 'College Dropout':
                     this.cdSongsGuessed++;
+                    if (this.cdSongsGuessed == this.cdLength) this.updateFeedback('. Congratulations, you\'ve completed College Dropout!', 'concat');
                     break;
-                case 'late registration':
+                case 'Late Registration':
                     this.lrSongsGuessed++;
+                    if (this.lrSongsGuessed == this.lrLength) this.updateFeedback('. Congratulations, you\'ve completed Late Registration!', 'concat');
                     break;
+                case 'Graduation':
+                    this.gradSongsGuessed++;
+                    if (this.gradSongsGuessed == this.gradLength) this.updateFeedback('. Congratulations, you\'ve completed Graduation!', 'concat');
+                    break;
+                case '808s & Heartbreak':
+                    this.heartbreakSongsGuessed++;
+                    if (this.heartbreakSongsGuessed == this.heartbreakLength) this.updateFeedback('. Congratulations, you\'ve completed 808s & Heartbreak!', 'concat');
+                    break;
+                case 'My Beautiful Dark Twisted Fantasy':
+                    this.mbdtfSongsGuessed++;
+                    if (this.mbdtfSongsGuessed == this.mbdtfLength) this.updateFeedback('. Congratulations, you\'ve completed My Beautiful Dark Twisted Fantasy!', 'concat');
+                    break;
+                case 'Yeezus':
+                    this.yeezusSongsGuessed++;
+                    if (this.yeezusSongsGuessed == this.yeezusLength) this.updateFeedback('. Congratulations, you\'ve completed College Dropout!', 'concat');
+                    break;
+                case 'The Life of Pablo':
+                    this.pabloSongsGuessed++;
+                    if (this.pabloSongsGuessed == this.pabloLength) this.updateFeedback('. Congratulations, you\'ve completed College Dropout!', 'concat');
                 default:
                     break;
             }
             if (this.catalog.length == 0){
-                this.updateFeedback('. That\'s all for now! Thanks for playing. Refresh to play again.', 'concat');
+                if (this.skippedSongs.length == 0){
+                    this.updateFeedback('. Way to go! You guessed every song. Your total score  is '+this.sum, 'concat');
+                }
+                else {
+                    this.catalog = this.skippedSongs;
+                    this.skippedSongs = [];
+                    console.log('catalog: ', this.catalog);
+                    console.log('skippedSongs: ', this.skippedSongs);
+                }
             }
         }
         else {
@@ -639,7 +1495,7 @@ app.controller('gameController', function () {
         if (this.score > this.best) this.best = this.score;
     };
     this.calculateAverage = function(){
-        this.average = Math.round(this.sum/this.numSongsTried);
+        this.average = Math.round(this.sum/this.numSongsGuessed);
     };
     $(document).ready(this.pickSong());
 });
