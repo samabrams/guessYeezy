@@ -15,9 +15,10 @@ app.controller('gameController', function () {
     this.cdLength = 21;
     this.lrSongsGuessed = 0;
     this.lrLength = 21;
-    this.cd = [
+    this.catalog = [
         {
             title: /^intro$/,
+            album: 'college dropout',
             trackNum: 1,
             producers: ['Kanye'],
             features: [],
@@ -29,6 +30,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^we don[\']?t care$/,
+            album: 'college dropout',
             trackNum: 2,
             producers: ['Kanye'],
             features: [],
@@ -39,6 +41,7 @@ app.controller('gameController', function () {
             songLength: '3:59'
         }, {
             title: /^graduation day$/,
+            album: 'college dropout',
             trackNum: 3,
             producers: ['Kanye'],
             features: [],
@@ -49,6 +52,7 @@ app.controller('gameController', function () {
             songLength: '1:22'
         }, {
             title: /^all falls down$/,
+            album: 'college dropout',
             trackNum: 4,
             producers: ['Kanye'],
             features: ['Syleena Johnson'],
@@ -60,6 +64,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^i[\']?ll fly away$/,
+            album: 'college dropout',
             trackNum: 5,
             producers: ['Kanye'],
             features: [],
@@ -71,6 +76,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^spaceship$/,
+            album: 'college dropout',
             trackNum: 6,
             producers: ['Kanye'],
             features: ['GLC', 'Consequence'],
@@ -82,6 +88,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^jesus walks$/,
+            album: 'college dropout',
             trackNum: 7,
             producers: ['Kanye'],
             features: [],
@@ -93,6 +100,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^never let me down$/,
+            album: 'college dropout',
             trackNum: 8,
             producers: ['Kanye'],
             features: ['J. Ivy', 'Jay Z'],
@@ -104,6 +112,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^get [\']?em high$/,
+            album: 'college dropout',
             trackNum: 9,
             producers: ['Kanye'],
             features: ['Talib Kweli', 'Common'],
@@ -115,6 +124,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^workout plan$/,
+            album: 'college dropout',
             trackNum: 10,
             producers: ['Kanye'],
             features: [],
@@ -126,6 +136,7 @@ app.controller('gameController', function () {
         },
         {
             title: /^(the )?new workout plan$/,
+            album: 'college dropout',
             trackNum: 11,
             producers: ['Kanye'],
             features: [],
@@ -137,8 +148,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^slow jamz$/,
+            album: 'college dropout',
             trackNum: 12,
-            producer: ['Kanye'],
+            producers: ['Kanye'],
             features: ['Jamie Foxx', 'Twista'],
             samples: ['\'A House Is Not A Home\' by Luther Vandross'],
             difficultLine: ['In the Chi and I be sippin Hennessey - play some R&B'],
@@ -148,8 +160,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^breathe in[,]? breathe out$/,
+            album: 'college dropout',
             trackNum: 13,
-            producer: ['Brian \"All Day\" Miller', 'Kanye'],
+            producers: ['Brian \"All Day\" Miller', 'Kanye'],
             features: ['Ludacris'],
             samples: [],
             difficultLine: ['Pullin\' up in the Lexuses, one on both hand, So I guess them GSes was ambidextrous'],
@@ -159,8 +172,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit skit 1$/,
+            album: 'college dropout',
             trackNum: 14,
-            producer: ['Kanye'],
+            producers: ['Kanye'],
             features: [],
             samples: [],
             difficultLine: ['Now you\'ll get that 25-thousand dollar job a year'],
@@ -170,8 +184,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit$/,
+            album: 'college dropout',
             trackNum: 15,
-            producer: ['Kanye'],
+            producers: ['Kanye'],
             features: [],
             samples: ['\'Like This and Like That\' by Monica ft. Mr. Malik', '\'Spirit in the Dark\' by Aretha Franklin'],
             difficultLine: ['Bring more of them girls I\'ve seen in The Aurora'],
@@ -181,8 +196,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^school spirit skit 2$/,
+            album: 'college dropout',
             trackNum: 16,
-            producer: ['Kanye'],
+            producers: ['Kanye'],
             features: [],
             samples: [],
             difficultLine: ['You pick up all those books that you\'re gonna read and not remember'],
@@ -192,8 +208,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^lil jimmy skit$/,
+            album: 'college dropout',
             trackNum: 17,
-            producer: ['Kanye'],
+            producers: ['Kanye'],
             features: [],
             samples: ['\'Ride\' by The Kleptones'],
             difficultLine: '',
@@ -203,8 +220,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^two words$/,
+            album: 'college dropout',
             trackNum: 18,
-            producer: ['Kanye'],
+            producers: ['Kanye'],
             features: ['The Harlem Boys Choir', 'Freeway', 'Mos Def'],
             samples: ['\'Peace and Love\' by Mandrill', '\'The Rainmaker\' by The 5th Dimension', '\'Got Nowhere\' by State Property', '\'Do It Again (Put Ya Hands Up)\' by Jay Z ft. Beanie Sigel and Amil'],
             difficultLine: ['These streets know game, can\'t ball, don\'t play'],
@@ -214,8 +232,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^through the wire$/,
+            album: 'college dropout',
             trackNum: 19,
-            producer: ['Kanye'],
+            producers: ['Kanye'],
             features: [],
             samples: ['\'Player\'s Ball\' by OutKast', '\'Through the Fire\' by Chaka Khan'],
             difficultLine: ['I got a lawyer for the case to keep what\'s in my safe safe'],
@@ -225,8 +244,9 @@ app.controller('gameController', function () {
         },
         {
             title: /^family business$/,
+            album: 'college dropout',
             trackNum: 20,
-            producer: ['Kanye'],
+            producers: ['Kanye'],
             features: [],
             samples: ['\'Fonky Thang\' by The Dells', '\'Ambitionz Az a Ridah\' by 2Pac', 'Rain Rain Go Away'],
             difficultLine: ['When I brought it why the guard have to look all through it?'],
@@ -236,20 +256,273 @@ app.controller('gameController', function () {
         },
         {
             title: /^last call$/,
+            album: 'college dropout',
             trackNum: 21,
-            producer: ['Evidence', 'Kanye'],
+            producers: ['Evidence', 'Kanye'],
             features: [],
             samples: ['\'Mr. Rockefeller\' by Bette Midler', '\'She\'s Gone to Another\' by The Whatnauts', '\'Doggone\' by Love', '\'Better Than Yours\' by Kanye West ft. Common', '\'Wow\' by Kanye West ft. GLC'],
             difficultLine: ['Last year shoppin my demo, I was tryin\' to shine'],
             mediumLine: ['They expected that College Dropout to drop and then flop'],
             easyLine: ['Yo fuck you, Kanye, first and foremost for making me do this shit, motherfucker'],
             songLength: '12:40'
+        },
+        {
+            title: /^wake up mr[\.]? west$/,
+            album: 'late registration',
+            trackNum: 1,
+            producers: [],
+            features: [],
+            samples: ['\'Someone That I Used To Love\' by Natalie Cole'],
+            difficultLine: ['He wanna play it again like he got somethin\' else to do'],
+            mediumLine: ['Look at my face, do I got a promise face?'],
+            easyLine: ['I knew I was gon\' see you again! Knew I was gon\' see you again!'],
+            songLength: '0:41'
+        },
+        {
+            title: /^heard [\']?em say$/,
+            album: 'late registration',
+            trackNum: 2,
+            producers: ['Jon Brion','Kanye'],
+            features: ['Adam Levine'],
+            samples: ['\'Candy Maker\' by Tommy James and the Shondells','\'Someone That I Used To Love\' by Natalie Cole'],
+            difficultLine: ['My Aunt Pam can\'t put them cigarettes down'],
+            mediumLine: ['Allāhu Akbar and throw him some hot cars'],
+            easyLine: ['Nothing\'s ever promised tomorrow today'],
+            songLength: '3:23'
+        },
+        {
+            title: /^touch the sky$/,
+            album: 'late registration',
+            trackNum: 3,
+            producers: ['Just Blaze'],
+            features: ['Lupe Fiasco'],
+            samples: ['\'Move on Up\' by Curtis Mayfield', '\'Leaving on a Jet Plane\' by Peter, Paul & Mary'],
+            difficultLine: ['I\'m back on the block like I\'m laying on the street'],
+            mediumLine: ['Back when Slick Rick got the shit to pop'],
+            easyLine: ['Come up in the spot lookin\' extra fly'],
+            songLength: '3:57'
+        },
+        {
+            title: /^gold digger$/,
+            album: 'late registration',
+            trackNum: 4,
+            producers: ['Jon Brion','Kanye'],
+            features: ['Jamie Foxx'],
+            samples: ['\'Bumpin\' Bus Stop\' by Thunder and Lightning', '\'Another Story to Tell\' by Mase', '\'I Got a Woman\' by Ray Charles'],
+            difficultLine: [''],
+            mediumLine: ['There\'s dishes in the back, he gotta roll up your sleeves'],
+            easyLine: ['Holla, \"We want prenup! We want prenup!\" (Yeah!)'],
+            songLength: '3:28'
+        },
+        {
+            title: /^skit [#]?1$/,
+            album: 'late registration',
+            trackNum: 5,
+            producers: [],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: ['We can\'t afford no gas!'],
+            songLength: '0:33'
+        },
+        {
+            title: /^drive slow$/,
+            album: 'late registration',
+            trackNum: 6,
+            producers: ['Kanye'],
+            features: ['GLC','Paul Wall'],
+            samples: ['\'Wildflower\' by Hank Crawford', '\'Living Together is Keeping Us Apart\' by Clarence Reid'],
+            difficultLine: ['Open up my mouth and sunlight illuminates the dark'],
+            mediumLine: ['And that don\'t make no sense, but baby, I\'m the shit'],
+            easyLine: ['You never know, homie, might meet some hoes, homie'],
+            songLength: '4:32'
+        },
+        {
+            title: /^my way home$/,
+            album: 'late registration',
+            trackNum: 7,
+            producers: ['Kanye'],
+            features: ['Common'],
+            samples: ['\'Home is Where the Hatred Is\' by Gil Scott Heron'],
+            difficultLine: ['The young smoke grass in grassless jungles'],
+            mediumLine: ['I stroll where souls get lost like Vegas'],
+            easyLine: ['I left three days ago, but no one seems to know I\'m gone'],
+            songLength: '1:43'
+        },
+        {
+            title: /^crack music$/,
+            album: 'late registration',
+            trackNum: 8,
+            producers: ['Jon Brion','Kanye'],
+            features: ['Game'],
+            samples: ['\'It\'s Your Thing\' by Cold Grits', '\'Since You Came in My Life\' by The New York Community Choir'],
+            difficultLine: ['This that inspiration for the Moes and the Folks man'],
+            mediumLine: ['Ronald Reagan cooked up an answer'],
+            easyLine: ['That real black music nigga'],
+            songLength: '4:31'
+        },
+        {
+            title: /^Roses$/,
+            album: 'late registration',
+            trackNum: 9,
+            producers: ['Jon Brion','Kanye'],
+            features: [],
+            samples: ['\'Rosie\' by Bill Withers'],
+            difficultLine: ['Feel like Amerie, it\'s just \"One Thing\"'],
+            mediumLine: ['Bitch, is you smokin reefer?'],
+            easyLine: ['I know it\'s past visiting hours but can I please give her these flowers?'],
+            songLength: '4:05'
+        },
+        {
+            title: /^bring me down$/,
+            album: 'late registration',
+            trackNum: 10,
+            producers: ['Jon Brion','Kanye'],
+            features: ['Brandy'],
+            samples: ['\'My Life Is Loving You\' by Rose Banks', '\'Wack Niggas\' by Talib Kweli ft. Common, Kanye West, and Consequence'],
+            difficultLine: ['See, I\'m often catching crosswinds forgetting where the hell I met you'],
+            mediumLine: ['Spanish girls say \"Yo no hablo inglés\"'],
+            easyLine: ['Hater niggas marry hater bitches and have hater kids'],
+            songLength: '3:18'
+        },
+        {
+            title: /^addiction$/,
+            album: 'late registration',
+            trackNum: 11,
+            producers: ['Jon Brion','Kanye'],
+            features: [],
+            samples: ['\'My Funny Valentine\' by Etta James'],
+            difficultLine: ['So I pour the potion, so we could both get high, as we could go'],
+            mediumLine: ['She\'s coming over, so I guess, that means, I\'m her drugs'],
+            easyLine: ['Why everything that\'s supposed to be bad make me feel so good?'],
+            songLength: '4:27'
+        },
+        {
+            title: /^skit [#]?2$/,
+            album: 'late registration',
+            trackNum: 12,
+            producers: [],
+            features: [],
+            samples: [],
+            difficultLine: [],
+            mediumLine: [],
+            easyLine: ['Got no money (got no money)'],
+            songLength: '0:31'
+        },
+        {
+            title: /^diamonds from sierra leone [\(]?remix[\)]?$/,
+            album: 'late registration',
+            trackNum: 13,
+            producers: ['Jon Brion','Devo Springsteen','Kanye'],
+            features: ['Jay Z'],
+            samples: ['\'I Smoke, I Drank\' by Body Head Bangerz ft. Lil Boosie and Young Bleed', '\'Ms. Jackson\' by OutKast', '\'Diamond Are Forever\' by Shirley Bassey'],
+            difficultLine: ['People lose hands, legs, arms, for real'],
+            mediumLine: ['Bought a Polo rugby, it looks so nice'],
+            easyLine: ['Yup, I got it from here, \'Ye, damn'],
+            songLength: '3:53'
+        },
+        {
+            title: /^we major$/,
+            album: 'late registration',
+            trackNum: 14,
+            producers: ['Warryn Campbell','Jon Brion','Kanye'],
+            features: ['Really Doe', 'Nas'],
+            samples: ['\'Action\' by Orange Krush', '\'Reasons\' by Earth, Wind & Fire'],
+            difficultLine: ['Fo-fo\'s or Black Christ? Both flows\'d be nice'],
+            mediumLine: ['Until you have a daughter that\'s what I call karma'],
+            easyLine: ['High off the ground from stair to skyscraper'],
+            songLength: '7:28'
+        },
+        {
+            title: /^skit [#]?3$/,
+            album: 'late registration',
+            trackNum: 15,
+            producers: [],
+            features: [],
+            samples: [],
+            difficultLine: ['Eating all of our cereal with forks because we wanted to save the milk, do you remember that?'],
+            mediumLine: ['Who did not have when we could not eat'],
+            easyLine: ['This was founded years ago'],
+            songLength: '0:24'
+        },
+        {
+            title: /^hey mama$/,
+            album: 'late registration',
+            trackNum: 16,
+            producers: ['Jon Brion','Kanye'],
+            features: [],
+            samples: ['\'This Little Light of Mine\'', '\'Today Won\'t Come Again\' by Donal Leace'],
+            difficultLine: ['Tell me the perfect color so I make it just right'],
+            mediumLine: ['This little light of mine and I\'m finna let it shine'],
+            easyLine: ['I know I act a fool but, I promise you I\'m goin back to school'],
+            songLength: '5:05'
+        },
+        {
+            title: /^celebration$/,
+            album: 'late registration',
+            trackNum: 17,
+            producers: ['Jon Brion','Kanye'],
+            features: [],
+            samples: ['\'Heavenly Dream\' by the Kay-Gees'],
+            difficultLine: ['All that talking is gon\' give me a Tylenol'],
+            mediumLine: ['Got some Cris and some Mo'],
+            easyLine: ['After that I grab yo ass'],
+            songLength: '3:18'
+        },
+        {
+            title: /^skit [#]?4$/,
+            album: 'late registration',
+            trackNum: 18,
+            producers: [],
+            features: [],
+            samples: [],
+            difficultLine: ['Don\'t you ever come back smellin\' all good, taking showers and shit like that, alright?'],
+            mediumLine: ['There is an imposter among us'],
+            easyLine: ['This brother right here has been out making beats on the side, yes he has'],
+            songLength: '1:18'
+        },
+        {
+            title: /^gone$/,
+            album: 'late registration',
+            trackNum: 19,
+            producers: ['Kanye'],
+            features: ['Consequence','Cam\'ron'],
+            samples: ['\'Upon This Rock\' by Joe Farrell', '\'1-9-9-9\' by Common ft. Sadat X', '\'The Show\' by Doug E. Fresh, Slick Rick and The Get Fresh Crew', '\'My Dear, Sweet Brother Numpsay\' by The Golden Child', '\'It\'s Too Late\' by Otis Redding'],
+            difficultLine: ['Caught something on the Usher tour, he had to let it burn'],
+            mediumLine: ['If we up in Fridays, I still have it my way'],
+            easyLine: ['We striving home, I ride on chrome'],
+            songLength: '6:02'
+        },
+        {
+            title: /^diamonds from sierra leone$/,
+            album: 'late registration',
+            trackNum: 20,
+            producers: ['Jon Brion','Devo Springsteen','Kanye'],
+            features: [],
+            samples: ['\'I Smoke, I Drank\' by Body Head Bangerz ft. Lil Boosie and Young Bleed', '\'Ms. Jackson\' by OutKast', '\'Diamond Are Forever\' by Shirley Bassey'],
+            difficultLine: ['Got family in the D, Kin-folk from Motown'],
+            mediumLine: ['A&R\'s lookin\' like, \"Pssh, we messed up\"'],
+            easyLine: ['Throw your diamonds in the sky if you feel the vibe'],
+            songLength: '3:58'
+        },
+        {
+            title: /^late$/,
+            album: 'late registration',
+            trackNum: 21,
+            producers: ['Kanye'],
+            features: [],
+            samples: ['\'I\'ll Erase Your Pain\' by The Whatnauts', '\'What\'s Beef?\' by The Notorious B.I.G.'],
+            difficultLine: ['Will I make it from the student loans to a Benzo?'],
+            mediumLine: ['Like them eskimos, what would you do for a Klondike?'],
+            easyLine: ['So turn this motherfucker up only if it feels right'],
+            songLength: '3:50'
         }
     ];
     this.pickSong = function () {
         if (this.currentSong) this.previousSongs.push(this.currentSong);
-        this.songIndex = Math.floor((Math.random() * this.cd.length));
-        this.currentSong = this.cd.splice(this.songIndex, 1)[0];
+        this.songIndex = Math.floor((Math.random() * this.catalog.length));
+        this.currentSong = this.catalog.splice(this.songIndex, 1)[0];
         console.log(this.currentSong);
         this.clearInput();
         this.score = 100;
@@ -301,20 +574,35 @@ app.controller('gameController', function () {
             this.calculateAverage();
             this.timeShown = true;
             this.awaitingGuess = false;
-            this.cdSongsGuessed++;
-            if (this.cd.length == 0){
+            switch(this.currentSong.album){
+                case 'college dropout':
+                    this.cdSongsGuessed++;
+                    break;
+                case 'late registration':
+                    this.lrSongsGuessed++;
+                    break;
+                default:
+                    break;
+            }
+            if (this.catalog.length == 0){
                 this.updateFeedback('. That\'s all for now! Thanks for playing. Refresh to play again.', 'concat');
             }
         }
         else {
-            for (var i = 0; i < this.cd.length; i++){
-                if (this.cd[i].title.test(userGuessForComparison)){
+            for (var i = 0; i < this.catalog.length; i++){
+                if (this.catalog[i].title.test(userGuessForComparison)){
                     console.log("i: " + i, "songIndex: " + this.songIndex);
-                    if (this.cd[i].trackNum > this.currentSong.trackNum){
-                        this.updateFeedback('The track is earlier on the album than '+userGuess);
-                    }
-                    else this.updateFeedback('The track is later on the album than '+userGuess);
-                    this.score -= 5;
+                    if (this.catalog[i].album == this.currentSong.album){
+                        if (this.catalog[i].trackNum > this.currentSong.trackNum){
+                            this.updateFeedback('The track is earlier on the album than '+userGuess);
+                        }
+                        else this.updateFeedback('The track is later on the album than '+userGuess);
+                        this.score -= 5;
+                        return;
+                    } else if (i > this.songIndex){
+                        this.updateFeedback('The track is on an earlier album than '+ this.catalog[i].album);
+                    } else this.updateFeedback('The track is on a later album than ' + this.catalog[i].album);
+                    this.score -= 10;
                     return;
                 }
             }
@@ -324,8 +612,8 @@ app.controller('gameController', function () {
                     return;
                 }
             }
-            this.updateFeedback('that\'s not on the album');
-            this.score -= 10;
+            this.updateFeedback('Don\'t think '+userGuess+' is on a Kanye album');
+            this.score -= 20;
         }
     };
     this.updateFeedback = function (str, mode) {

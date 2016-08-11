@@ -23,7 +23,7 @@
     <div class="guessContainer col-xs-8">
         <input type="text" id="guess" ng-hide="!gc.awaitingGuess">
         <button ng-click="gc.submitGuess()" ng-hide="!gc.awaitingGuess">Submit Guess</button>
-        <button ng-click="gc.pickSong()" ng-hide="gc.cd.length == 0">New Song</button>
+        <button ng-click="gc.pickSong()" ng-hide="gc.catalog.length == 0">New Song</button>
     </div>
     <div class="helpButtons col-xs-12">
         <button ng-show="gc.awaitingGuess && gc.currentSong.samples.length > 0" ng-click="gc.showSample()">give me a sample</button>
