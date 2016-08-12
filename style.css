@@ -83,3 +83,15 @@ h1 {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
 }
+.rules {
+    position: relative;
+    left: 16.67%;
+}
+.rules ul{
+    position: relative;
+    left: 25%;
+}
+.rules li {
+    list-style-type: none;
+    text-align: left;
+}

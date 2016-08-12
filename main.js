@@ -5,7 +5,18 @@ var app = angular.module('myApp', []);
 app.controller('gameController', function () {
     this.timeShown = false;
     this.awaitingGuess = false;
-    this.score = 100;
+    this.SCORE_START = 100;
+    this.INCORRECT_SAME_ALBUM_DETRIMENT = 5;
+    this.INCORRECT_DIFFERENT_ALBUM_DETRIMENT = 10;
+    this.INCORRECT_NO_ALBUM_DETRIMENT = 20;
+    this.SAMPLE_DETRIMENT = 4;
+    this.FEATURE_DETRIMENT = 15;
+    this.PRODUCER_DETRIMENT = 2;
+    this.HARD_LYRIC_DETRIMENT = 10;
+    this.MEDIUM_LYRIC_DETRIMENT = 20;
+    this.EASY_LYRIC_DETRIMENT = 40;
+    this.SONG_LENGTH_DETRIMENT = 12;
+    this.score = this.SCORE_START;
     this.best = 0;
     this.average = 0;
     this.sum = 0;
@@ -404,7 +415,7 @@ app.controller('gameController', function () {
             songLength: '4:31'
         },
         {
-            title: /^Roses$/,
+            title: /^roses$/,
             album: 'Late Registration',
             albumYear: 2005,
             trackNum: 9,
@@ -580,9 +591,9 @@ app.controller('gameController', function () {
             producers: ['Kanye'],
             features: [],
             samples: ['\'Wake Up Mr. West\' by Kanye West','\'Someone Saved My Life Tonight\' by Elton John', '\'The Ruler\'s Back\' by Jay Z'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Okay look up now, they done stoled yo streetness'],
+            mediumLine: ['I\'m like the fly Malcolm X, buy any jeans necessary'],
+            easyLine: ['Homie this shit is basic, welcome to Graduation'],
             songLength: '3:15'
         },
         {
@@ -593,9 +604,9 @@ app.controller('gameController', function () {
             producers: ['Brian \'All Day\' Miller','Kanye'],
             features: [],
             samples: ['\'Kid Charlemagne\' by Steely Dan'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['When I shop so much I can speak Italian'],
+            mediumLine: ['We was sort of like Will Smith and his son'],
+            easyLine: ['Mhm, that\'s that shit (realize)'],
             songLength: '2:47'
         },
         {
@@ -607,8 +618,8 @@ app.controller('gameController', function () {
             features: [],
             samples: ['\'Harder Better Faster Stronger\' by Daft Punk'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['New Gospel, homie, take six, and take this, haters!'],
+            easyLine: ['Since Prince was on Apollonia'],
             songLength: '5:11'
         },
         {
@@ -619,9 +630,9 @@ app.controller('gameController', function () {
             producers: ['Kanye'],
             features: [],
             samples: ['\'Ambitionz Az a Ridah\' by 2Pac', '\'My Song\' by Labi Siffre'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Heaven\'ll watch, God calling from the hotlines'],
+            mediumLine: ['Do you even remember what the issue is?'],
+            easyLine: ['What it means, what it means'],
             songLength: '4:03'
         },
         {
@@ -632,9 +643,9 @@ app.controller('gameController', function () {
             producers: ['DJ Toomp', 'Mike Dean','Kanye'],
             features: ['T-Pain'],
             samples: ['\'School Spirit\' by Kanye West', '\'In Da Club\' by 50 Cent', '\'PYT\' by Michael Jackson'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Cause she feel booze like she bombed at Apollo'],
+            mediumLine: ['Whipped it out, she said \"I never seen Snakes on a Plane\"'],
+            easyLine: ['It feel like L.A., it feel like Miami it feel like N.Y., summertime Chi'],
             songLength: '3:27'
         },
         {
@@ -645,9 +656,9 @@ app.controller('gameController', function () {
             producers: ['DJ Toomp','Kanye'],
             features: [],
             samples: ['\'I Got Money\' by Young Jeezy ft. T.I.', '\'They Reminisce Over You\' by Pete Rock and C.L. Smooth'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['If he can move through the rumors, he can drive off of fumes'],
+            mediumLine: ['I\'m on TV talking like it\'s just you and me'],
+            easyLine: ['Wait \'til I get my money right'],
             songLength: '4:30'
         },
         {
@@ -658,9 +669,9 @@ app.controller('gameController', function () {
             producers: ['Nottz','Kanye'],
             features: ['Lil Wayne'],
             samples: ['\'Long Red\' by Mountain'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Stove on my waist turn beef to patties'],
+            mediumLine: ['Top 5 MCs, you ain\'t gotta remind me, top 5 MCs: you gotta rewind me'],
+            easyLine: ['We outta here baby!'],
             songLength: '3:24'
         },
         {
@@ -671,9 +682,9 @@ app.controller('gameController', function () {
             producers: ['Jon Brion','Kanye'],
             features: ['Mos Def'],
             samples: ['\'Sing Swan Song\' by Can'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['You want to sit down but we hit the drive-thru'],
+            mediumLine: ['Stop talking \'bout your boyfriend since he is not me'],
+            easyLine: ['We go through too much bullshit'],
             songLength: '5:13'
         },
         {
@@ -685,8 +696,8 @@ app.controller('gameController', function () {
             features: ['Dwele'],
             samples: ['\'On Coming From a Broken Home (Parts 1 & 2)\' by Gil Scott-Heron','\'Green Lights\' by Charles Hamilton', '\'Sky High\' by Kid Cudi', '\'Still Here\' by Girl Talk', '\'I Want Those Flashing Lights\' by Colin Munroe'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['And try to hit you with the ol-wu-wopte'],
+            easyLine: ['Feeling like Katrina with no FEMA'],
             songLength: '3:57'
         },
         {
@@ -697,9 +708,9 @@ app.controller('gameController', function () {
             producers: ['Eric Hudson','Kanye'],
             features: ['DJ Premier'],
             samples: ['\'If We Can\'t Be Lover\' by Prince Phillip Mitchell', '\'Bring the Noise\' by Public Enemy', '\'Jimbrowski\' by Jungle Brothers'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['People talk so much shit about me at barbershops'],
+            mediumLine: ['I\'ll never be as laid back as this beat was'],
+            easyLine: ['People talking shit, but when shit hit the fan'],
             songLength: '3:47'
         },
         {
@@ -710,9 +721,9 @@ app.controller('gameController', function () {
             producers: ['Gee Robertson','Plain Pat','Kanye'],
             features: [],
             samples: ['\'Save the Country\' by Laura Nyro', '\'Long Red\' by Mountain', '\'Award Tour\' by A Tribe Called Quest ft. Trugoy th Dove', '\'We Major\' by Kanye West ft. Nas and Really Doe'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['She asking about the speed boats yeah I admit we rented \'em'],
+            mediumLine: ['Two years Dwayne Wayne became Dwyane Wade'],
+            easyLine: ['Can I talk my shit again?'],
             songLength: '3:32'
         },
         {
@@ -723,9 +734,9 @@ app.controller('gameController', function () {
             producers: ['Warryn Campbell','Kanye'],
             features: ['Chris Martin'],
             samples: ['\'Streets is Talking\' by Jay Z ft. Beanie Sigel', '\'High Power Rap\' by Crash Crew', '\'Home\' by Kanye West ft. John Legend'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['They wanna rap and make soul beats just like you'],
+            mediumLine: ['And when I grew up, she showed me how to go downtown'],
+            easyLine: ['Do you think about me now and then?'],
             songLength: '3:23'
         },
         {
@@ -736,9 +747,9 @@ app.controller('gameController', function () {
             producers: ['DJ Toomp'],
             features: [],
             samples: ['\'Hola Hovito\' by Jay Z', 'It\'s Gonna Be Lonely\' by Prince','\'Dirt Off Your Shoulder\' by Jay Z'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['On that \"Diamonds\" remix I swore I spazzed'],
+            mediumLine: ['Now I\'m on the top and everybody on the scrotum'],
+            easyLine: ['No I.D. my mentor, now let the story begin'],
             songLength: '4:47'
         },
         {
@@ -750,8 +761,8 @@ app.controller('gameController', function () {
             features: [],
             samples: [],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['Take off your cool then lose control'],
+            easyLine: ['Why would she make calls out the blue'],
             songLength: '6:17'
         },
         {
@@ -762,9 +773,9 @@ app.controller('gameController', function () {
             producers: ['Jeff Bhasker','Plain Pat','Kanye'],
             features: ['Kid Cudi'],
             samples: [],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['I had to leave before they even cut the cake'],
+            mediumLine: ['Look back on my life and my life gone'],
+            easyLine: ['Can\'t stop having these visions, I gotta get with it'],
             songLength: '4:22'
         },
         {
@@ -777,7 +788,7 @@ app.controller('gameController', function () {
             samples: [],
             difficultLine: [],
             mediumLine: [],
-            easyLine: [],
+            easyLine: ['Why we up 3 AM on the phone?'],
             songLength: '3:30'
         },
         {
@@ -788,9 +799,9 @@ app.controller('gameController', function () {
             producers: ['Jeff Bhasker','Kanye'],
             features: ['Young Jeezy'],
             samples: [],
-            difficultLine: [],
+            difficultLine: ['That\'s why I\'m so goon, summertime no June'],
             mediumLine: [],
-            easyLine: [],
+            easyLine: ['I\'m the only thing I\'m afraid of'],
             songLength: '3:58'
         },
         {
@@ -802,8 +813,8 @@ app.controller('gameController', function () {
             features: [],
             samples: [],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['We\'re just racing time, where\'s the finish line?'],
+            easyLine: ['Screaming, \"No, no, no, n-nooo!\"'],
             songLength: '4:30'
         },
         {
@@ -814,9 +825,9 @@ app.controller('gameController', function () {
             producers: ['Jeff Bhasker', 'Plain Pat','Kanye'],
             features: ['Mr Hudson'],
             samples: [],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Baby let em look give us cold looks cause we look cold'],
+            mediumLine: ['You really wanna spend your whole life alone?'],
+            easyLine: ['You worry bout the wrong things, the wrong things'],
             songLength: '4:37'
         },
         {
@@ -827,9 +838,9 @@ app.controller('gameController', function () {
             producers: ['Kanye'],
             features: [],
             samples: ['\'Kissing in the Rain\' by Patrick Doyle'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Shorty kind of crazy but it turn me on'],
+            mediumLine: ['Straight up out a movie scene'],
+            easyLine: ['You never stop it now'],
             songLength: '4:34'
         },
         {
@@ -842,7 +853,7 @@ app.controller('gameController', function () {
             samples: [],
             difficultLine: [],
             mediumLine: [],
-            easyLine: [],
+            easyLine: ['So I hopped in the cab and I paid my fare'],
             songLength: '3:09'
         },
         {
@@ -854,8 +865,8 @@ app.controller('gameController', function () {
             features: [],
             samples: ['\'See-Line Woman\' by Nina Simone'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['Oh, you just gon\' keep it like you never knew'],
+            easyLine: ['When you decide to break the rules'],
             songLength: '3:58'
         },
         {
@@ -866,9 +877,9 @@ app.controller('gameController', function () {
             producers: ['No I.D.','Kanye'],
             features: ['Lil Wayne'],
             samples: [],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['And the night is young, the drinks is cold'],
+            mediumLine: ['I got the night, I\'m running from the sun'],
+            easyLine: ['Cause we were once a fairy tale'],
             songLength: '4:18'
         },
         {
@@ -881,7 +892,7 @@ app.controller('gameController', function () {
             samples: ['\'Memories Fade\' by Tears for Fears'],
             difficultLine: [],
             mediumLine: [],
-            easyLine: [],
+            easyLine: ['Goodbye my friend, will I ever love again?'],
             songLength: '2:44'
         },
         {
@@ -892,9 +903,9 @@ app.controller('gameController', function () {
             producers: ['Jeff Bhasker','No I.D.','The RZA','Mike Dean','Kanye'],
             features: ['Bon Iver', 'Nicki Minaj'],
             samples: ['\'In High Places\' by Mike Oldfield ft. Jon Anderson', '\'GOOD Music Cypher\' by Kanye West and Common ft. Pusha T, Big Sean, and Cyhi Da Prince'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['And my chick in that new Phoebe Philo'],
+            mediumLine: ['Look like a fat booty Celine Dion'],
+            easyLine: ['Well, gather \'round children, zip it, listen'],
             songLength: '4:40'
         },
         {
@@ -905,9 +916,9 @@ app.controller('gameController', function () {
             producers: ['Mike Dean','No I.D.','Kanye'],
             features: ['Kid Cudi', 'Raekwon'],
             samples: ['\'You Showed Me\' by Enoch Light and the Glittering Guitars'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['They rewrite history, I don\'t believe in yesterday'],
+            mediumLine: ['Got caught with 30 rocks, the cop look like Alec Baldwin'],
+            easyLine: ['Not for nothing I’ve foreseen it, I dream it'],
             songLength: '5:57'
         },
         {
@@ -918,9 +929,9 @@ app.controller('gameController', function () {
             producers: ['S1','Jeff Bhasker','Mike Dean','Andrew Dawson','Kanye'],
             features: ['Dwele'],
             samples: ['\'It\'s Your Thing\' by Cold Grits', '\'Afromerica\' by Continent Number 6', '\'21st Century Schizoid Man\' by King Crimson'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['My furs is Mongolian, my ice brought the goalies in'],
+            mediumLine: ['I don’t need your pussy, bitch, I’m on my own dick'],
+            easyLine: ['I guess every superhero need his theme music'],
             songLength: '4:52'
         },
         {
@@ -945,8 +956,8 @@ app.controller('gameController', function () {
             features: ['Fergie','Kid Cudi','Rihanna'],
             samples: [],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['Public visitation, we met at Borders'],
+            easyLine: ['I had to take him to that ghetto university'],
             songLength: '4:59'
         },
         {
@@ -957,9 +968,9 @@ app.controller('gameController', function () {
             producers: ['Plain Pat','Mike Dean','Kanye'],
             features: ['Jay Z','Rick Ross','Bon Iver', 'Nicki Minaj'],
             samples: [],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Tony Matterhorn, dutty wine it, wylin'],
+            mediumLine: ['Mix that Goose and Malibu I call it \"Malibooyah\"'],
+            easyLine: ['Question: What do these things all have in common?'],
             songLength: '6:18'
         },
         {
@@ -970,9 +981,9 @@ app.controller('gameController', function () {
             producers: ['No I.D.','Mike Dean','Kanye'],
             features: ['Swizz Beatz', 'Jay Z','Pusha T', 'The RZA', 'Cyhi the Prince'],
             samples: ['\'You Are - I Am\' by Manfred Mann\'s Earth Band', '\'Think (About It)\' by Lyn Collins', '\'Can\'t Knock the Hustle\' by Jay Z ft. Mary J. Blige'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['My movement is like the civil rights, I\'m Ralph David'],
+            mediumLine: ['A half a mil in twenties like a billion where I\'m from'],
+            easyLine: ['It\'s like that sometimes, I mean ridiculous'],
             songLength: '6:38'
         },
         {
@@ -983,9 +994,9 @@ app.controller('gameController', function () {
             producers: ['Bink!', 'Mike Dean'],
             features: ['Rick Ross'],
             samples: ['\'Will You Love Me Tomorrow\' by Smokey Robinson'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['I hit the Jamaican spot, at the bar, take a seat'],
+            mediumLine: ['Lookin\' at my wrist it\'ll turn your ass to stone'],
+            easyLine: ['We love Jesus but you done learned a lot from Satan'],
             songLength: '5:52'
         },
         {
@@ -996,9 +1007,9 @@ app.controller('gameController', function () {
             producers: ['Emile','Jeff Bhasker','Mike Dean','Kanye'],
             features: ['Tony Williams','Pusha T'],
             samples: ['\'Expo \'83\' by The Backyard Heavies', '\'Mary Jane\' by Rick James', '\'Introduction to Star Time\' by James Brown'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Hoes like vultures, wanna fly in your Freddy loafers'],
+            mediumLine: ['I could never take the intimacy'],
+            easyLine: ['Let\'s have a toast for the douchebags'],
             songLength: '9:08'
         },
         {
@@ -1009,9 +1020,9 @@ app.controller('gameController', function () {
             producers: ['Mike Caren','No I.D.','Mike Dean','Kanye'],
             features: [],
             samples: ['\'Stud-Spider\' by Tony Joe White', '\'She\'s My Baby\' by The Mojo Men', '\'Iron Man\' by Black Sabbath'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Snatched the dress off her back and told her, \"Get away\"'],
+            mediumLine: ['It\'s kinda crazy that\'s all considered the same thing'],
+            easyLine: ['I think I just fell in love with a porn star'],
             songLength: '5:27'
         },
         {
@@ -1022,9 +1033,9 @@ app.controller('gameController', function () {
             producers: ['DJ Frank E','Mike Dean','Kanye'],
             features: ['John Legend'],
             samples: ['\'Avril 14th\' by Aphex Twin'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['I know you ain\'t getting this type of dick from that local dude'],
+            mediumLine: ['You weren\'t perfect but you made life worth it'],
+            easyLine: ['Yeezy taught you well'],
             songLength: '7:49'
         },
         {
@@ -1036,8 +1047,8 @@ app.controller('gameController', function () {
             features: ['Bon Iver'],
             samples: ['\'Hook and Sling\' by Eddie Bo', '\'Think (About It)\' by Lyn Collins', '\'Soul Makossa\' by Manu Dibango','\'Comment #1\' by Gil Scott-Heron','\'Woods\' by Bon Iver'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['If we die in each others arms, still get laid in the afterlife'],
+            easyLine: ['I\'m new in the city, and I\'m down for the night'],
             songLength: '4:16'
         },
         {
@@ -1048,9 +1059,9 @@ app.controller('gameController', function () {
             producers: ['Jeff Bhasker','Kanye'],
             features: [],
             samples: ['\'Comment #1\' by Gil Scott-Heron'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Democracy, liberty, and justice were revolutionary code names'],
+            mediumLine: ['The illegitimate daughter of the mother country'],
+            easyLine: ['Us living as we do upside-down'],
             songLength: '1:38'
         },
         {
@@ -1061,9 +1072,9 @@ app.controller('gameController', function () {
             producers: ['Benji B','Daft Punk','Mike Dean','Kanye'],
             features: [],
             samples: ['\'Sermon (He\'ll Give Us What We Really Need)\' by HOly Name of Mary Choral Family'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Took her to the \'Bleau, she tried to sip the fountain'],
+            mediumLine: ['Black Timbs all on your couch again'],
+            easyLine: ['Yeezy season approachin'],
             songLength: '2:36'
         },
         {
@@ -1075,8 +1086,8 @@ app.controller('gameController', function () {
             features: [],
             samples: [],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['They see a black man with a white woman at the top floor they gone come to kill King Kong'],
+            easyLine: ['I keep it 300 like the Romans'],
             songLength: '3:08'
         },
         {
@@ -1087,9 +1098,9 @@ app.controller('gameController', function () {
             producers: ['Hudson Mohawke', 'Daft Punk','Mike Dean','Kanye'],
             features: ['Justin Vernon'],
             samples: ['\'Forward Inna Dem Clothes\' by Capleton', '\'Are Zindagi Hai Khel\' by R.D. Burman'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Suh mi tek har outta bugah red and put her in a tall skirt'],
+            mediumLine: ['Virgil, Pyrex, Don C snapback'],
+            easyLine: ['I said, \"Shit I\'m chillin\' tryna stack these millions\"'],
             songLength: '3:51'
         },
         {
@@ -1100,9 +1111,9 @@ app.controller('gameController', function () {
             producers: ['Teachers','Shama Joseph','Travis Scott','Che Pope','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Frank Ocean'],
             samples: ['\'Gyongyhaju Lany\' by Omega', '\'Gossip Files\' by Kanye West', '\'Cruel Cold Winter\' by Teachers', '\'HBA War\' by Dutch E Germ'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['I won\'t end this high, not this time again'],
+            mediumLine: ['See they\'ll confuse us with some bullshit like the New World Order'],
+            easyLine: ['You see it\'s leaders and it\'s followers'],
             songLength: '4:16'
         },
         {
@@ -1113,9 +1124,9 @@ app.controller('gameController', function () {
             producers: ['Arca','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Justin Vernon', 'Chief Keef'],
             samples: ['\'Feminine\' by Arca'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Callin\' up your uncle\'s place'],
+            mediumLine: ['Skinny bitch with no shoulders'],
+            easyLine: ['But these bitches can\'t handle me'],
             songLength: '5:26'
         },
         {
@@ -1126,9 +1137,9 @@ app.controller('gameController', function () {
             producers: ['Evian Christ','Dom Solo','Arca','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Justin Vernon', 'Assassin'],
             samples: ['\'Lately\' by Kenny Lattimore'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Try that \'pon February the 30th'],
+            mediumLine: ['Uh, I know you need that reptile'],
+            easyLine: ['Eatin\' Asian pussy, all I need was sweet and sour sauce'],
             songLength: '3:54'
         },
         {
@@ -1140,8 +1151,8 @@ app.controller('gameController', function () {
             features: [],
             samples: ['\'Snowflakes Are Dancing\' by Isao Tomita', '\'Down for My Niggaz\' by C-Murder ft. Snoop Dogg and Magic', '\'R U Ready\' by TNGHT', '\'Strange Fruit\' by Nina Simone'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['Now your driver say that new Benz you can\'t afford that'],
+            easyLine: ['We could\'ve been somebody'],
             songLength: '6:00'
         },
         {
@@ -1152,9 +1163,9 @@ app.controller('gameController', function () {
             producers: ['Ackee Juice Rockers','S1','Travis Scott','Mike Dean','Kanye'],
             features: ['Kid Cudi'],
             samples: ['\'Chief Rocka\' by Lords of the Underground', '\'Blocka (Ackeejuice Rockers Remix)\' by Pusha T ft. Popcaan and Travis Scott'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Focus on the future and let the crew knock her'],
+            mediumLine: ['All dem a gwaan dem a dem a dem a gwaan'],
+            easyLine: ['If you love me so much then why\'d you let me go?'],
             songLength: '4:03'
         },
         {
@@ -1165,9 +1176,9 @@ app.controller('gameController', function () {
             producers: ['Brodinski','Gesaffelstein','Arca','Daft Punk','Mike Dean','Kanye'],
             features: ['King L'],
             samples: ['\'Stop Live in a De Pass\' by Beenie Man'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Louboutin on the toes again'],
+            mediumLine: ['Killin\' \'em, honey how I make the pain improve'],
+            easyLine: ['This the crayest shit in the club since \"In Da Club\"'],
             songLength: '2:58'
         },
         {
@@ -1179,8 +1190,8 @@ app.controller('gameController', function () {
             features: ['Charlie Wilson'],
             samples: ['\'Aeroplane(Reprise)\' by Wee', '\'Sweet Nothin\'s\' by Brenda Lee', '\'Bound\' by Ponderosa Twins Plus One'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['But first, you gon\' remember how to forget'],
+            easyLine: ['All them other niggas lame, and you know it now'],
             songLength: '3:49'
         },
         {
@@ -1192,8 +1203,8 @@ app.controller('gameController', function () {
             features: ['Kelly Price','The-Dream','Kirk Franklin', 'Chance the Rapper'],
             samples: ['\'Late\' by Kanye West', '\'Otis\' by Jay Z and Kanye West', '\'This Little Light of Mine\'', '\'Natalie Praying and She\'s Only 4 Years Old!\''  ],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['I laugh in my head cause I bet that my ex looking back like a pillar of salt'],
+            easyLine: ['This is a God dream'],
             songLength: '5:11'
         },
         {
@@ -1205,12 +1216,12 @@ app.controller('gameController', function () {
             features: ['Kelly Price', 'Kid Cudi'],
             samples: ['\'Jumpman\' by Drake and Future','\'Father I Stretch My Hands\' by Pastor T.L. Barrett'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['She get under your skin if you let her'],
+            easyLine: ['Beautiful morning, you\'re the sun in my morning babe'],
             songLength: '2:12'
         },
         {
-            title: /^(father stretch my hands)? p(ar)?t[\.]? 2$/,
+            title: /^(father stretch my hands )?p(ar)?t[\.]? 2$/,
             album: 'The Life of Pablo',
             albumYear: 2016,
             trackNum: 3,
@@ -1218,8 +1229,8 @@ app.controller('gameController', function () {
             features: ['Caroline Shaw', 'Desiigner'],
             samples: ['\'Street Fighter II Sound Effects\'', '\'Panda\' by Desiigner', '\'Father I Stretch My Hands\' by Pastor T.L. Barrett'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['They be asking round town who be clappin\' shit'],
+            easyLine: ['All his cash, market crashed, hurt him bad, people get divorced for that'],
             songLength: '2:07'
         },
         {
@@ -1231,8 +1242,8 @@ app.controller('gameController', function () {
             features: ['Rihanna', 'Swizz Beatz'],
             samples: ['\'Wake Up Mr. West\' by Kanye West', '\'Mi Sono Svegliato E... Ho Chiuso Gli Occhi\' by Il Rovescio Della Medaglia', '\'Do What You Gotta Do\' by Nina Simone', '\'Bam Bam\' by Sister Nancy'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['I just copped a jet to fly over personal debt'],
+            easyLine: ['I feel like me and Taylor might still have sex'],
             songLength: '3:11'
         },
         {
@@ -1244,8 +1255,8 @@ app.controller('gameController', function () {
             features: [],
             samples: ['\'Talagh\' by Googosh'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['Fashion show in Gotham, I need another costume'],
+            easyLine: ['Wake up, nigga, wake up'],
             songLength: '2:23'
         },
         {
@@ -1258,7 +1269,7 @@ app.controller('gameController', function () {
             samples: ['\'So Alive\' by Kings of Tomorrow'],
             difficultLine: [],
             mediumLine: [],
-            easyLine: [],
+            easyLine: [' I\'m crying now, it feels so good to be free, to be accepted for who you are and loved no matter what, oh lord thank you.'],
             songLength: '2:08'
         },
         {
@@ -1269,9 +1280,9 @@ app.controller('gameController', function () {
             producers: ['Plain Pat','Noah Goldstein','Southside','Velous','Mike Dean','Kanye'],
             features: ['Young Thug'],
             samples: [],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Got the Fruit of Islam in the trenches hah?'],
+            mediumLine: ['I just shot an amateur video; I think I should go pro'],
+            easyLine: ['Tell my baby I\'m back in town'],
             songLength: '3:14'
         },
         {
@@ -1282,9 +1293,9 @@ app.controller('gameController', function () {
             producers: ['Trevor Gureckis','Caroline Shaw','DJ Dodger Stadium','Hudson Mohawke','Noah Goldstein','Mike Dean','Kanye'],
             features: ['Desiigner'],
             samples: ['\'Human\' by Goldfrapp'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Ball on them niggas, get heated and shot down'],
+            mediumLine: ['I smack her on her ass if she ghetto, I ain\'t gon\' lie'],
+            easyLine: ['Fuck, can she fuck right now?'],
             songLength: '2:00'
         },
         {
@@ -1297,7 +1308,7 @@ app.controller('gameController', function () {
             samples: [],
             difficultLine: [],
             mediumLine: [],
-            easyLine: [],
+            easyLine: ['I even had the pink Polo, I thought I was Kanye'],
             songLength: '0:44'
         },
         {
@@ -1309,8 +1320,8 @@ app.controller('gameController', function () {
             features: ['Chris Brown', 'Kid Cudi'],
             samples: ['\'Fantastic Freaks at the Dixie\' by DJ Grand Wizard THeodore and The Fantastic Five'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['And I be talkin\' shit like I ain\'t scared to lose a fistfight'],
+            easyLine: ['Let me crash here for the moment, I don\'t need to own it, no lie'],
             songLength: '2:56'
         },
         {
@@ -1321,9 +1332,9 @@ app.controller('gameController', function () {
             producers: ['Hudson Mohawke','Andrew Dawson','Mitus','Metro Boomin','Noah Goldstein','Mike Dean','Kanye'],
             features: ['The Weeknd'],
             samples: ['\'Hit\' by Section 25'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['See through the veil and forget all your cares'],
+            mediumLine: ['Told you four times, don\'t test me hoe'],
+            easyLine: ['Only I can mention me'],
             songLength: '3:49'
         },
         {
@@ -1334,9 +1345,9 @@ app.controller('gameController', function () {
             producers: ['Sevn Thomas','Darren King','Havoc','Mike Dean', 'Noah Goldstein','Frank Dukes','Boi-1da','Kanye'],
             features: ['Ty Dolla Sign'],
             samples: ['\'Couches\' by Frank Dukes', '\'Friends\' by Whodini'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Merry Christmas, then I\'m finished, then it\'s back to business'],
+            mediumLine: ['I just showed up for the yams though'],
+            easyLine: ['How many of us, how many jealous? '],
             songLength: '4:04'
         },
         {
@@ -1347,9 +1358,9 @@ app.controller('gameController', function () {
             producers: ['Caroline Shaw','Noah Goldstein','Sinjin Hawke','Cashmere Cat','Mike Dean','Kanye'],
             features: ['Sia', 'Vic Mensa'],
             samples: [],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Cry, who needs sorry when there\'s Hennessy?'],
+            mediumLine: ['You left your fridge open, somebody just took a sandwich'],
+            easyLine: ['You too wild, you too wild, you too wild, and I need you now'],
             songLength: '4:53'
         },
         {
@@ -1362,7 +1373,7 @@ app.controller('gameController', function () {
             samples: ['\'Walking Dub\' by Sugar Minott'],
             difficultLine: [],
             mediumLine: [],
-            easyLine: [],
+            easyLine: ['There\'s light with no heat'],
             songLength: '0:37'
         },
         {
@@ -1375,7 +1386,7 @@ app.controller('gameController', function () {
             samples: [],
             difficultLine: [],
             mediumLine: [],
-            easyLine: [],
+            easyLine: ['Yeezy, Yeezy, what\'s good?'],
             songLength: '0:55'
         },
         {
@@ -1386,9 +1397,9 @@ app.controller('gameController', function () {
             producers: ['Karriem Riggins','Mike Dean','Kanye'],
             features: ['Andre 3000'],
             samples: ['\'Hot in Herre\' by Nelly', '\'E.I.\' by Nelly', '\'Joy\' by Isaac Hayes', '\'Opening\' by Apple Inc.', '\'Answers Me\' by Arthur Russell'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Got a hotel room, 3 stars for you'],
+            mediumLine: ['Now I\'m \'bout to drive 90 miles like Matt Barnes to kill... '],
+            easyLine: ['Check it out, this the bonus track, this the bonus'],
             songLength: '5:14'
         },
         {
@@ -1399,9 +1410,9 @@ app.controller('gameController', function () {
             producers: ['Madlib','Kanye'],
             features: ['Kendrick Lamar'],
             samples: ['\'Suzie Thundertussy\' by Junie Morrison', '\'Give Me My Love\' Johnny Guitar Watson', '\'Stand Up and Shout About Love\' by Larry Graham', '\'Mighty Healthy\' by Ghostface Killah', '\'NBA Jam Sound Effects\' by EA Sports'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['Make me say \"Nam Myoho Renge Kyo\"'],
+            mediumLine: ['I was uninspired since Lauryn Hill retired'],
+            easyLine: ['Uhm, well cutie, I like your bougie booty'],
             songLength: '6:04'
         },
         {
@@ -1412,9 +1423,9 @@ app.controller('gameController', function () {
             producers: ['Southside','Metro Boomin','Charlie Heat','Kanye'],
             features: [],
             samples: ['\'Dhalsim\' by Yoko Shimomura and Isao Abe'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['I\'m a jerk, you need to work, you need to call my spouse'],
+            mediumLine: ['I need extra deep, I like my bitches extra thick'],
+            easyLine: ['Yeezy, Yeezy, Yeezy just jumped over Jumpman'],
             songLength: '3:15'
         },
         {
@@ -1426,8 +1437,8 @@ app.controller('gameController', function () {
             features: ['Ty Dolla Sign', 'Post Malone'],
             samples: ['\'Mystery of Love\' by Mr. Fingers', '\'Deep Inside\' by Hardrive', '\'I Get Lifted (The Underground Network Mix)\' by Barbara Tucker', '\'(I Know) I\'m Losing You\' by Rare Earth'],
             difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            mediumLine: ['I\'ve been so led on, I\'ve been runnin\' \'round'],
+            easyLine: ['I think I think too much'],
             songLength: '3:08'
         },
         {
@@ -1438,9 +1449,9 @@ app.controller('gameController', function () {
             producers: ['Noah Goldstein','Allen Ritter','Mike Dean','Kanye'],
             features: ['Sampha'],
             samples: ['\'Where I\'m From\' by Jay Z', '\'We Don\'t Care\' by Kanye West'],
-            difficultLine: [],
-            mediumLine: [],
-            easyLine: [],
+            difficultLine: ['I can\'t quite understand the games you play'],
+            mediumLine: ['Checkin\' Instagram comments to crowdsource my self esteem'],
+            easyLine: ['This generation\'s closest thing to Einstein, so don\'t worry about me, I\'m fine'],
             songLength: '6:01'
         }
 
@@ -1462,39 +1473,40 @@ app.controller('gameController', function () {
         console.log('current song: ', this.currentSong);
         console.log('songs left: '+this.catalog.length);
         this.clearInput();
-        this.score = 100;
+        this.score = this.SCORE_START;
         this.awaitingGuess = true;
         this.timeShown = false;
+        this.guessedCorrectly = false;
         this.updateFeedback('Try this one!');
     };
     this.showSample = function () {
         this.updateFeedback(this.currentSong.samples.shift() + ' is sampled on the track');
-        this.score -= 4;
+        this.score -= this.SAMPLE_DETRIMENT;
     };
     this.showFeature = function () {
         this.updateFeedback(this.currentSong.features.shift() + ' is featured on the track');
-        this.score -= 15;
+        this.score -= this.FEATURE_DETRIMENT;
     };
     this.showProducer = function () {
         this.updateFeedback(this.currentSong.producers.shift() + ' did production on the track');
-        this.score -= 2;
+        this.score -= this.PRODUCER_DETRIMENT;
     };
     this.showDifficultLine = function () {
         this.updateFeedback('Ok, here\'s a tough one: ' + this.currentSong.difficultLine.shift());
-        this.score -= 10;
+        this.score -= this.HARD_LYRIC_DETRIMENT;
     };
     this.showMediumLine = function () {
         this.updateFeedback('This one might give it to you: ' + this.currentSong.mediumLine.shift());
-        this.score -= 20;
+        this.score -= this.MEDIUM_LYRIC_DETRIMENT;
     };
     this.showEasyLine = function () {
         this.updateFeedback('Give up if you don\'t know this one: ' + this.currentSong.easyLine.shift());
-        this.score -= 40;
+        this.score -= this.EASY_LYRIC_DETRIMENT;
     };
     this.showSongLength = function () {
         this.updateFeedback('The track is ' + this.currentSong.songLength + ' long');
         this.timeShown = true;
-        this.score -= 12;
+        this.score -= this.SONG_LENGTH_DETRIMENT;
     };
     this.submitGuess = function () {
         var userGuess = $('#guess').val();
@@ -1533,17 +1545,17 @@ app.controller('gameController', function () {
                     break;
                 case 'Yeezus':
                     this.yeezusSongsGuessed++;
-                    if (this.yeezusSongsGuessed == this.yeezusLength) this.updateFeedback('. Congratulations, you\'ve completed College Dropout!', 'concat');
+                    if (this.yeezusSongsGuessed == this.yeezusLength) this.updateFeedback('. Congratulations, you\'ve completed Yeezus!', 'concat');
                     break;
                 case 'The Life of Pablo':
                     this.pabloSongsGuessed++;
-                    if (this.pabloSongsGuessed == this.pabloLength) this.updateFeedback('. Congratulations, you\'ve completed College Dropout!', 'concat');
+                    if (this.pabloSongsGuessed == this.pabloLength) this.updateFeedback('. Congratulations, you\'ve completed The Life of Pablo!', 'concat');
                 default:
                     break;
             }
             if (this.catalog.length == 0){
                 if (this.skippedSongs.length == 0){
-                    this.updateFeedback('. Way to go! You guessed every song. Your total score  is '+this.sum, 'concat');
+                    this.updateFeedback(' Way to go! You guessed every song. Your total score  is '+this.sum+'. Share it with your Kanye friends! Refresh the page to play again', 'concat');
                 }
                 else {
                     this.catalog = this.skippedSongs;
@@ -1562,12 +1574,12 @@ app.controller('gameController', function () {
                             this.updateFeedback('The track is earlier on the album than '+userGuess);
                         }
                         else this.updateFeedback('The track is later on the album than '+userGuess);
-                        this.score -= 5;
+                        this.score -= this.INCORRECT_SAME_ALBUM_DETRIMENT;
                         return;
                     } else if (this.catalog[i].albumYear > this.currentSong.albumYear){
                         this.updateFeedback('The track is on an earlier album than '+ this.catalog[i].album);
                     } else this.updateFeedback('The track is on a later album than ' + this.catalog[i].album);
-                    this.score -= 10;
+                    this.score -= this.INCORRECT_DIFFERENT_ALBUM_DETRIMENT;
                     return;
                 }
             }
@@ -1584,7 +1596,7 @@ app.controller('gameController', function () {
                 }
             }
             this.updateFeedback('Don\'t think '+userGuess+' is on a Kanye solo album');
-            this.score -= 20;
+            this.score -= this.INCORRECT_NO_ALBUM_DETRIMENT;
         }
     };
     this.updateFeedback = function (str, mode) {

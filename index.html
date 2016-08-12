@@ -88,6 +88,24 @@
             <figcaption class="albumCoverCaption">{{gc.pabloSongsGuessed}}/{{gc.pabloLength}}</figcaption>
         </figure>
     </div>
+    <div class="rules col-xs-8">
+        <h1>Rules</h1>
+        <ul>
+            <li>Only songs on Kanye's solo studio albums are in the game</li>
+            <li>You begin with a score of {{gc.SCORE_START}}</li>
+            <li>You will lose {{gc.INCORRECT_NO_ALBUM_DETRIMENT}} points for guessing a song that is not on one of Kanye's solo studio albums</li>
+            <li>You will lose {{gc.INCORRECT_DIFFERENT_ALBUM_DETRIMENT}} points for guessing a song on a different Kanye album</li>
+            <li>You will lose {{gc.INCORRECT_SAME_ALBUM_DETRIMENT}} points for guessing a song on the same album</li>
+            <li>You will lose {{gc.SAMPLE_DETRIMENT}} points for getting a sample</li>
+            <li>You will lose {{gc.PRODUCER_DETRIMENT}} points for getting a producer</li>
+            <li>You will lose {{gc.FEATURE_DETRIMENT}} points for getting a feature</li>
+            <li>You will lose {{gc.HARD_LYRIC_DETRIMENT}} points for getting a difficult line</li>
+            <li>You will lose {{gc.MEDIUM_LYRIC_DETRIMENT}} points for getting a kinda easy line</li>
+            <li>You will lose {{gc.EASY_LYRIC_DETRIMENT}} points for getting a really easy line</li>
+            <li>You will lose {{gc.SONG_LENGTH_DETRIMENT}} points for getting the length of the song</li>
+            <li>Your score on a song can go negative if you let it, but you can skip a song at any time by pressing the 'New Song' button </li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>
