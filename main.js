@@ -1477,7 +1477,7 @@ app.controller('gameController', function () {
         this.awaitingGuess = true;
         this.timeShown = false;
         this.guessedCorrectly = false;
-        this.updateFeedback('Try this one!');
+        this.updateFeedback('Enter a song to start guessing, or click a button to get a clue!');
     };
     this.showSample = function () {
         this.updateFeedback(this.currentSong.samples.shift() + ' is sampled on the track');
