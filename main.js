@@ -357,7 +357,7 @@ app.controller('gameController', function () {
             producers: ['Jon Brion','Kanye'],
             features: ['Jamie Foxx'],
             samples: ['\'Bumpin\' Bus Stop\' by Thunder and Lightning', '\'Another Story to Tell\' by Mase', '\'I Got a Woman\' by Ray Charles'],
-            difficultLine: [''],
+            difficultLine: [],
             mediumLine: ['There\'s dishes in the back, he gotta roll up your sleeves'],
             easyLine: ['Holla, \"We want prenup! We want prenup!\" (Yeah!)'],
             songLength: '3:28'
