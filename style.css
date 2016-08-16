@@ -88,8 +88,8 @@ h1 {
     left: 16.67%;
 }
 .rules ul{
-    position: relative;
-    left: 25%;
+    position: absolute;
+    left: 8.33%;
 }
 .rules li {
     list-style-type: none;
