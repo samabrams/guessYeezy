@@ -110,12 +110,9 @@ h1 {
     position: relative;
     left: 16.67%;
 }
-.rules ul{
-    position: absolute;
-    left: 8.33%;
+.rulesHeader {
+    cursor: pointer;
 }
-.rules li {
-    list-style-type: circle;
-    font-weight: 200;
+#rulesModal li{
     text-align: left;
 }

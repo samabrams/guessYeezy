@@ -7,6 +7,7 @@
     <link href="style.css" type="text/css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.0.js"
             integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="main.js"></script>
 </head>
@@ -87,23 +88,44 @@
         </figure>
     </div>
     <div ng-cloak class="rules col-xs-8">
-        <h1>Rules</h1>
-        <ul class="col-xs-10">
-            <li>Only songs on Kanye's solo studio albums are in the game</li>
-            <li>You begin with a score of <strong>{{gc.SCORE_START}} points </strong> </li>
-            <li>You will lose <strong>{{gc.INCORRECT_NO_ALBUM_DETRIMENT}} points</strong>  for guessing a song that is <strong>not</strong> on one of Kanye's <strong>solo studio albums</strong></li>
-            <li>You will lose <strong>{{gc.INCORRECT_DIFFERENT_ALBUM_DETRIMENT}} points</strong>  for guessing a song on a <strong>different Kanye album</strong></li>
-            <li>You will lose <strong>{{gc.INCORRECT_SAME_ALBUM_DETRIMENT}} points</strong>  for guessing a song on the <strong>same album</strong></li>
-            <li>You will lose <strong>{{gc.SAMPLE_DETRIMENT}} points</strong> for getting a <strong>sample</strong></li>
-            <li>You will lose <strong>{{gc.PRODUCER_DETRIMENT}} points</strong> for getting a <strong>producer</strong></li>
-            <li>You will lose <strong>{{gc.FEATURE_DETRIMENT}} points </strong> for getting a <strong>feature</strong></li>
-            <li>You will lose <strong>{{gc.HARD_LYRIC_DETRIMENT}} points</strong> for getting a <strong>difficult</strong> line</li>
-            <li>You will lose <strong>{{gc.MEDIUM_LYRIC_DETRIMENT}} points</strong> for getting a <strong>kinda easy</strong> line</li>
-            <li>You will lose <strong>{{gc.EASY_LYRIC_DETRIMENT}} points</strong> for getting a <strong>really easy</strong> line</li>
-            <li>You will lose <strong>{{gc.SONG_LENGTH_DETRIMENT}} points</strong> for getting the <strong>length</strong> of the song</li>
-            <li>Your score on a song <strong>can go negative</strong> if you let it, but <strong>you can skip a song</strong> at any time by pressing the 'New Song' button </li>
-        </ul>
+        <h1 class="rulesHeader">Rules</h1>
     </div>
 </div>
+<!-- Modal for Chosen Option -->
+<div class="modal" id="rulesModal" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Rules</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="rulesList">
+                    <li>Only songs on Kanye's solo studio albums are in the game</li>
+                    <li>You begin with a score of <strong>{{gc.SCORE_START}} points </strong> </li>
+                    <li>You will lose <strong>{{gc.INCORRECT_NO_ALBUM_DETRIMENT}} points</strong>  for guessing a song that is <strong>not</strong> on one of Kanye's <strong>solo studio albums</strong></li>
+                    <li>You will lose <strong>{{gc.INCORRECT_DIFFERENT_ALBUM_DETRIMENT}} points</strong>  for guessing a song on a <strong>different Kanye album</strong></li>
+                    <li>You will lose <strong>{{gc.INCORRECT_SAME_ALBUM_DETRIMENT}} points</strong>  for guessing a song on the <strong>same album</strong></li>
+                    <li>You will lose <strong>{{gc.SAMPLE_DETRIMENT}} points</strong> for getting a <strong>sample</strong></li>
+                    <li>You will lose <strong>{{gc.PRODUCER_DETRIMENT}} points</strong> for getting a <strong>producer</strong></li>
+                    <li>You will lose <strong>{{gc.FEATURE_DETRIMENT}} points </strong> for getting a <strong>feature</strong></li>
+                    <li>You will lose <strong>{{gc.HARD_LYRIC_DETRIMENT}} points</strong> for getting a <strong>difficult</strong> line</li>
+                    <li>You will lose <strong>{{gc.MEDIUM_LYRIC_DETRIMENT}} points</strong> for getting a <strong>kinda easy</strong> line</li>
+                    <li>You will lose <strong>{{gc.EASY_LYRIC_DETRIMENT}} points</strong> for getting a <strong>really easy</strong> line</li>
+                    <li>You will lose <strong>{{gc.SONG_LENGTH_DETRIMENT}} points</strong> for getting the <strong>length</strong> of the song</li>
+                    <li>Your score on a song <strong>can go negative</strong> if you let it, but <strong>you can skip a song</strong> at any time by pressing the 'New Song' button </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- .modal-content -->
+    </div><!-- .modal-dialog -->
+</div><!-- .modal -->
+<script>
+    $('.rulesHeader').click(function(){
+        $('#rulesModal').modal();
+    })
+</script>
 </body>
 </html>
