@@ -116,3 +116,6 @@ h1 {
 #rulesModal li{
     text-align: left;
 }
+.modal-content {
+    background-color: #ff4d4d;
+}
